@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/BL5849/git/MyWeather2/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="black">#000000</color>
+    <color name="black_overlay">#cc000000</color>
+    <color name="write">#ffffff</color>
+    <declare-styleable name="ButtonBarContainerTheme"><attr format="reference" name="metaButtonBarStyle"/><attr format="reference" name="metaButtonBarButtonStyle"/></declare-styleable>
+    <declare-styleable name="TwoWayView"><attr name="android:orientation"/><attr name="android:choiceMode"/><attr name="android:listSelector"/><attr name="android:drawSelectorOnTop"/></declare-styleable>
+    <!-- From: file:/C:/Users/BL5849/git/MyWeather2/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">5dp</dimen>
+    <dimen name="activity_vertical_margin">5dp</dimen>
+    <!-- From: file:/C:/Users/BL5849/git/MyWeather2/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">MyWeather : Settings</string>
+    <string name="app_name">MyWeather</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="feellike_en ">Feels like :</string>
+    <string name="feellike_fr ">Ressentie :</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="humid_en ">Humidity :</string>
+    <string name="humid_fr ">Humidité :</string>
+    <string name="no">Cancel</string>
+    <string name="pressure_en ">Pressure :</string>
+    <string name="pressure_fr ">Pression :</string>
+    <string name="quit">Quit</string>
+    <string name="really_quit">Are you sure you want to Quit ?</string>
+    <string name="tend_en ">Next 24H :</string>
+    <string name="tend_fr ">Tendance :</string>
+    <string name="title_activity_days">MyWeather : Next Days</string>
+    <string name="title_activity_hours">MyWeather : Next Hours</string>
+    <string name="title_activity_main">MyWeather : Now</string>
+    <string name="title_activity_settings">MyWeather : Settings</string>
+    <string name="wind_en ">Wind :</string>
+    <string name="wind_fr ">Vent :</string>
+    <string name="yes">Quit</string>
+    <!-- From: file:/C:/Users/BL5849/git/MyWeather2/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+
+        -->
+    </style>
+    <style name="AppTheme" parent="android:Theme.NoTitleBar">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="ButtonBar">
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:background">@android:drawable/bottom_bar</item>
+    </style>
+    <style name="ButtonBarButton"/>
+    <style name="FullscreenTheme" parent="android:Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">@style/ButtonBar</item>
+        <item name="metaButtonBarButtonStyle">@style/ButtonBarButton</item>
+    </style>
+    <style name="TwoWayView">
+    	<item name="android:orientation">horizontal</item>
+	</style>
+</resources>
