@@ -1,5 +1,7 @@
 package com.myweather;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
@@ -60,10 +62,9 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
     public int testByte,pass;
     String language,unit,vitesse;
     String PreviousResult,temp,statusline;
-    boolean UpOption,refreshInProgress;
+    boolean UpOption,refreshInProgress,Mydebug;
 	private String feel,press,wind,humid,un,tend;
 	Button button_refresh;
-    
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +90,9 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 	    button_refresh = (Button) findViewById(R.id.button_refresh);
 	    statusline="(last source : ";
 	    UpOption = false;
+		File file = new File("/storage/sdcard0/ReconApps/MyWeather2/"+"Mydebug");
+		if (file.exists() == true) { Mydebug=true; } else { Mydebug=false;}
+		System.out.println("Mydebug: ("+Mydebug+")");
 	}
 	
 	@Override 

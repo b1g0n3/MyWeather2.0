@@ -16,7 +16,7 @@ ADDED from AndroidManifest.xml:2:1
 uses-sdk
 ADDED from AndroidManifest.xml:7:5
 MERGED from com.android.support:support-v4:22.2.0:20:5
-MERGED from MyWeather2:library:unspecified:22:5
+MERGED from MyWeather2.0:library:unspecified:22:5
 MERGED from com.android.support:support-v4:22.2.0:20:5
 	android:targetSdkVersion
 		ADDED from AndroidManifest.xml:9:9
