@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">MyWeather</string>
@@ -6,6 +6,7 @@
     <string name="action_settings">MyWeather : Settings</string>
     <string name="title_activity_settings">MyWeather : Settings</string>
     <string name="title_activity_hours">MyWeather : Next Hours</string>
+    <string name="title_activity_detail">MyWeather : Details</string>
     <string name="title_activity_main">MyWeather : Now</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>

@@ -73,7 +73,7 @@ public class DetailActivity extends Activity implements IReconDataReceiver, IHUD
         mHUDConnectivityManager = (HUDConnectivityManager) HUDOS.getHUDService(HUDOS.HUD_CONNECTIVITY_SERVICE);
 
         TimeZone tz = TimeZone.getDefault();
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_detail);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         textView = (TextView) findViewById(R.id.status);
