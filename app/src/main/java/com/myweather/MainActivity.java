@@ -61,7 +61,7 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 	static String key = "28faca837266a521f823ab10d1a45050";
     public int testByte,pass;
     String language,unit,vitesse;
-    String PreviousResult,temp,statusline;
+    String PreviousResult,temp,statusline,statustoast;
     boolean UpOption,refreshInProgress,Mydebug;
 	private String feel,press,wind,humid,un,tend;
 	Button button_refresh;
@@ -271,7 +271,7 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 		
 		public void onReceiveCompleted(int status, ReconDataResult result)
 		{
-			if (pass==1) {
+//			if (pass==1) {
 				
 			    if (status != ReconSDKManager.STATUS_OK)
 			    {
@@ -282,6 +282,7 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 			    ReconLocation rloc = (ReconLocation)result.arrItems.get(0);
 			    Location loc = rloc.GetLocation();
 			    rloc.GetPreviousLocation();
+
 			    if (loc != ReconLocation.INVALID_LOCATION)
 			    {
 			        latitude=loc.getLatitude();
@@ -292,6 +293,7 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 					statusline="(last refresh:";
 			    } else {
 			    	statusline="No GPS. Previous location (last : ";
+					Toast.makeText(this, "No GPS", Toast.LENGTH_SHORT).show();
 			    	latitude=oldLatitude; longitude=oldLongitude;
 			    	//		        
 			    	//	remplacement de la localisation pour test	        
@@ -313,10 +315,16 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 					//new HashMap<String, List<String>>();
 					//sendRequest(new ReconHttpRequest("GET", url, 5000,null , null));
 					new WebRequestTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
+					System.out.println("mon gettext=" + textView.getText());
+					if (!statustoast.equals("")) {
+						Toast.makeText(this, statustoast, Toast.LENGTH_SHORT).show();
+						System.out.println("Statustoast="+statustoast );
+						statustoast="";
+					}
 				} catch (MalformedURLException e) {
 					System.out.println("MalformedURLException...");
 				}
-			}
+//			}
 		}
 
 		@Override
@@ -355,9 +363,10 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 					System.out.println("Error: " +  response.getResponseMessage());
 				}
 			} catch (Exception e) {
-				System.out.println("HUD not connected - No Internet");
-				//statusline="No Internet (last data:";
-				e.printStackTrace();
+				System.out.println("No Internet Access");
+//				textView.setText("No Internet Access");
+				statustoast="No Internet Access";
+						e.printStackTrace();
 			}
 			return null;
 		}

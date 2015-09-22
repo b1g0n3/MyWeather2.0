@@ -55,18 +55,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int wind=0x7f020012;
     }
     public static final class id {
-        public static final int Layout1=0x7f0a0001;
+        public static final int Layout1=0x7f0a0000;
         public static final int LayoutSettings=0x7f0a0013;
-        public static final int Temperature=0x7f0a0002;
+        public static final int Temperature=0x7f0a0001;
         public static final int action_settings=0x7f0a001f;
-        public static final int button_refresh=0x7f0a000b;
-        public static final int condition=0x7f0a0004;
-        public static final int icon=0x7f0a0005;
+        public static final int button_refresh=0x7f0a000a;
+        public static final int condition=0x7f0a0003;
+        public static final int icon=0x7f0a0004;
         public static final int icon2=0x7f0a0019;
         public static final int image=0x7f0a001e;
         public static final int imgIcon=0x7f0a000f;
-        public static final int lvItems=0x7f0a0000;
-        public static final int status=0x7f0a000c;
+        public static final int lvItems=0x7f0a000c;
+        public static final int status=0x7f0a000b;
         public static final int switchLanguage=0x7f0a0017;
         public static final int switchUnit=0x7f0a0016;
         public static final int textLanguage=0x7f0a0015;
@@ -75,12 +75,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int textView2=0x7f0a001c;
         public static final int textView3=0x7f0a001a;
         public static final int textView4=0x7f0a001b;
-        public static final int texthumid=0x7f0a0007;
-        public static final int textozone=0x7f0a0009;
-        public static final int textpress=0x7f0a0006;
-        public static final int textressentie=0x7f0a0003;
-        public static final int texttendance=0x7f0a000a;
-        public static final int textwind=0x7f0a0008;
+        public static final int texthumid=0x7f0a0006;
+        public static final int textozone=0x7f0a0008;
+        public static final int textpress=0x7f0a0005;
+        public static final int textressentie=0x7f0a0002;
+        public static final int texttendance=0x7f0a0009;
+        public static final int textwind=0x7f0a0007;
         public static final int toast_layout_root=0x7f0a001d;
         public static final int txtHeader=0x7f0a000d;
         public static final int txtTemperature=0x7f0a0010;
@@ -90,12 +90,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class layout {
         public static final int activity_days=0x7f030000;
-        public static final int activity_hours=0x7f030001;
-        public static final int activity_main=0x7f030002;
-        public static final int listview_header_row=0x7f030003;
-        public static final int listview_item_row=0x7f030004;
-        public static final int settings=0x7f030005;
-        public static final int toast=0x7f030006;
+        public static final int activity_detail=0x7f030001;
+        public static final int activity_hours=0x7f030002;
+        public static final int activity_main=0x7f030003;
+        public static final int listview_header_row=0x7f030004;
+        public static final int listview_item_row=0x7f030005;
+        public static final int settings=0x7f030006;
+        public static final int toast=0x7f030007;
     }
     public static final class menu {
         public static final int days=0x7f090000;
@@ -119,12 +120,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int tend_en =0x7f08000e;
         public static final int tend_fr =0x7f08000f;
         public static final int title_activity_days=0x7f080010;
-        public static final int title_activity_hours=0x7f080011;
-        public static final int title_activity_main=0x7f080012;
-        public static final int title_activity_settings=0x7f080013;
-        public static final int wind_en =0x7f080014;
-        public static final int wind_fr =0x7f080015;
-        public static final int yes=0x7f080016;
+        public static final int title_activity_detail=0x7f080011;
+        public static final int title_activity_hours=0x7f080012;
+        public static final int title_activity_main=0x7f080013;
+        public static final int title_activity_settings=0x7f080014;
+        public static final int wind_en =0x7f080015;
+        public static final int wind_fr =0x7f080016;
+        public static final int yes=0x7f080017;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 
