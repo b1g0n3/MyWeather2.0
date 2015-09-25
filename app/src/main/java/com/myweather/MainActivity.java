@@ -74,7 +74,7 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 		mHUDConnectivityManager = (HUDConnectivityManager) HUDOS.getHUDService(HUDOS.HUD_CONNECTIVITY_SERVICE);
 
 		TimeZone tz = TimeZone.getDefault();
-		setContentView(R.layout.activity_main);
+//		setContentView(R.layout.activity_main);
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy); 
 		textView = (TextView) findViewById(R.id.status);
@@ -191,12 +191,13 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
     	toast.setDuration(Toast.LENGTH_SHORT);
     	toast.setView(layout);
     	toast.show();
-    	onDisplay(PreviousResult);
+		onDisplay(PreviousResult);
 		super.onResume();
     }
     
     private void onDisplay(String data) {
-    	if (data !=null & data!="") {
+		System.out.println("ImOk0");
+		if (data !=null & data!="") {
     		UpOption=true;
     		ForecastIO fio = new ForecastIO(key);
     		fio.getForecast(data);
@@ -207,8 +208,11 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
     		Resources res = getResources();
     		int resourceId = res.getIdentifier(
     		   icon1, "drawable", getPackageName() );
-    		iconimage.setImageResource( resourceId );
+			System.out.println("ImOk6="+icon1+"resourceid"+ resourceId );
+    		iconimage.setImageResource(resourceId);
+			System.out.println("ImOk7");
     		setTitle("MyWeather : currently");
+			System.out.println("ImOk8");
     		if (language.equals("en")) {
     			feel = getString(R.string.feellike_en);
     			press = getString(R.string.pressure_en);
@@ -224,7 +228,6 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
     			vitesse = "km";
     			tend=getString(R.string.tend_fr);
     		}
-    		
     	    String [] f  = currently.get().getFieldsArray();
 			String dir=headingToString2(Integer.valueOf(currently.get().getByKey("windBearing")));
     		temperature.setText(DoubleToI(currently.get().getByKey("temperature"))+"°");
@@ -238,10 +241,11 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
     		String substr=data.substring(data.indexOf("hourly\":{\"")+20);
     		substr=substr.substring(0, substr.indexOf("\""));
     		texttendance.setText(tend+" "+substr);
-    		button_refresh.setVisibility(View.VISIBLE);
+			System.out.println("ImOk3");
+			button_refresh.setVisibility(View.VISIBLE);
     		refreshInProgress=false;
     	} else {
-    		String icon1 = "@drawable/unknown";
+			String icon1 = "@drawable/unknown";
     		Resources res = getResources();
     		int resourceId = res.getIdentifier(
     		   icon1, "drawable", getPackageName() );
