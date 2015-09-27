@@ -33,10 +33,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.location.Criteria;
 import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.provider.Settings;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -47,12 +51,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity implements IReconDataReceiver, IHUDConnectivity {
+public class MainActivity extends Activity implements IHUDConnectivity {
+//public class MainActivity extends Activity implements IReconDataReceiver, IHUDConnectivity {
+
+	private LocationManager locationManager;
+	private String provider;
+	private MyLocationListener mylistener;
+	private Criteria criteria;
+
 
 	HUDConnectivityManager mHUDConnectivityManager = null;
 	TextView mCurrentTemp;
     public boolean first;
-	private TextView textView, textcondition,temperature,textressentie,textwind,textpress,texthumid,textozone,texttendance;
+//	private TextView textView;
+	private TextView textcondition,temperature,textressentie;
 	private ImageView iconimage;
 	public static String result;
 	private static ReconOSHttpClient client;
@@ -61,7 +73,7 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 	static String key = "28faca837266a521f823ab10d1a45050";
     public int testByte,pass;
     String language,unit,vitesse;
-    String PreviousResult,temp,statusline,statustoast;
+    String PreviousResult,temp,statusline;
     boolean UpOption,refreshInProgress,Mydebug;
 	private String feel,press,wind,humid,un,tend;
 	Button button_refresh;
@@ -74,18 +86,13 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 		mHUDConnectivityManager = (HUDConnectivityManager) HUDOS.getHUDService(HUDOS.HUD_CONNECTIVITY_SERVICE);
 
 		TimeZone tz = TimeZone.getDefault();
-//		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main);
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy); 
-		textView = (TextView) findViewById(R.id.status);
+//		textView = (TextView) findViewById(R.id.status);
 		textcondition = (TextView) findViewById(R.id.condition);
 		temperature = (TextView) findViewById(R.id.Temperature);
 		textressentie = (TextView) findViewById(R.id.textressentie);
-		textwind = (TextView) findViewById(R.id.textwind);
-		textpress = (TextView) findViewById(R.id.textpress);
-		texthumid = (TextView) findViewById(R.id.texthumid);
-		textozone = (TextView) findViewById(R.id.textozone);
-		texttendance = (TextView) findViewById(R.id.texttendance);
     	iconimage = (ImageView) findViewById(R.id.icon);
 	    button_refresh = (Button) findViewById(R.id.button_refresh);
 	    statusline="(last source : ";
@@ -191,13 +198,12 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
     	toast.setDuration(Toast.LENGTH_SHORT);
     	toast.setView(layout);
     	toast.show();
-		onDisplay(PreviousResult);
+    	onDisplay(PreviousResult);
 		super.onResume();
     }
     
     private void onDisplay(String data) {
-		System.out.println("ImOk0");
-		if (data !=null & data!="") {
+    	if (data !=null & data!="") {
     		UpOption=true;
     		ForecastIO fio = new ForecastIO(key);
     		fio.getForecast(data);
@@ -208,11 +214,8 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
     		Resources res = getResources();
     		int resourceId = res.getIdentifier(
     		   icon1, "drawable", getPackageName() );
-			System.out.println("ImOk6="+icon1+"resourceid"+ resourceId );
-    		iconimage.setImageResource(resourceId);
-			System.out.println("ImOk7");
+    		iconimage.setImageResource( resourceId );
     		setTitle("MyWeather : currently");
-			System.out.println("ImOk8");
     		if (language.equals("en")) {
     			feel = getString(R.string.feellike_en);
     			press = getString(R.string.pressure_en);
@@ -228,33 +231,27 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
     			vitesse = "km";
     			tend=getString(R.string.tend_fr);
     		}
+
     	    String [] f  = currently.get().getFieldsArray();
 			String dir=headingToString2(Integer.valueOf(currently.get().getByKey("windBearing")));
     		temperature.setText(DoubleToI(currently.get().getByKey("temperature"))+"°");
     		textressentie.setText(feel+" "+DoubleToI(currently.get().getByKey("apparentTemperature"))+"°");
-    		textcondition.setText(currently.get().getByKey("summary").replace("\"", ""));
-    		textpress.setText(press+" "+DoubleToI(currently.get().getByKey("pressure")));
-    		textwind.setText(wind+" "+DoubleToI(currently.get().getByKey("windSpeed"))+" "+vitesse+" ("+dir+")");
-    		texthumid.setText(humid+" "+DoubleToP(currently.get().getByKey("humidity"))+"%");
-    		textozone.setText("Ozone : "+DoubleToI(currently.get().getByKey("ozone"))+"");
-    		textView.setText(statusline+currently.get().getByKey("time")+")");
+//    		textView.setText(statusline+currently.get().getByKey("time")+")");
     		String substr=data.substring(data.indexOf("hourly\":{\"")+20);
     		substr=substr.substring(0, substr.indexOf("\""));
-    		texttendance.setText(tend+" "+substr);
-			System.out.println("ImOk3");
-			button_refresh.setVisibility(View.VISIBLE);
+    		button_refresh.setVisibility(View.VISIBLE);
     		refreshInProgress=false;
     	} else {
-			String icon1 = "@drawable/unknown";
+    		String icon1 = "@drawable/unknown";
     		Resources res = getResources();
     		int resourceId = res.getIdentifier(
     		   icon1, "drawable", getPackageName() );
-    		iconimage.setImageResource( resourceId );
+    		iconimage.setImageResource(resourceId);
     		System.out.println("nothing to display or bad json...");
     		System.out.println("data="+data);
     		UpOption=false;
-	        textView.setText("nothing to display...");
-	        button_refresh.setVisibility(View.VISIBLE);
+//	        textView.setText("nothing to display...");
+//	        button_refresh.setVisibility(View.VISIBLE);
 	        refreshInProgress=false;
     	}
     }
@@ -262,18 +259,89 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 ////////////////////////////////////////////////////
     
 	private void doRefresh() {
+		System.out.println("doRefresh()");
 		result="";
-		//client = new ReconOSHttpClient(this, clientCallback);
 		Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
-		pass=1;
+
+		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+		// Define the criteria how to select the location provider
+		criteria = new Criteria();
+		criteria.setAccuracy(Criteria.ACCURACY_COARSE);   //default
+
+		// user defines the criteria
+
+		criteria.setCostAllowed(false);
+		// get the best provider depending on the criteria
+		provider = locationManager.getBestProvider(criteria, false);
+		// the last known location of this provider
+		Location location = locationManager.getLastKnownLocation(provider);
+
+		mylistener = new MyLocationListener();
+
+		if (location != null) {
+			mylistener.onLocationChanged(location);
+
+			// location updates: at least 1 meter and 200millsecs change
+			locationManager.requestLocationUpdates(provider, 2000, 100, mylistener);
+			String a=""+location.getLatitude();
+			if (location != null)
+			{
+				latitude=location.getLatitude();
+				longitude=location.getLongitude();
+
+				System.out.println("New Lat trouve:"+latitude+" / long:"+longitude);
+				oldLatitude=latitude; oldLongitude=longitude;
+//			statusline="(last refresh:";
+			} else {
+				System.out.println("no Lat trouve:");
+				statusline="No GPS. Previous location used";
+				latitude=oldLatitude; longitude=oldLongitude;
+			}
+			//
+			//	remplacement de la localisation pour test
+			//
+			//latitude=50.647392; longitude=3.130481; // my home
+			latitude=45.092624; longitude=6.068348; // alpe d'huez
+			//latitude=45.125263; longitude=6.127609; // Pic Blanc
+			//latitude=41.919229; longitude=8.738635; //Ajaccio
+			//latitude=46.192683; longitude=48.205964; //Russie
+			//latitude=49.168602; longitude=25.351872; //bulgarie
+			//latitude=36.752887; longitude=3.042048; //alger
+
+			System.out.println("Fetching data...");
+//		        textView.setText("Fetching data...");
+			try {
+				if (unit.equals("F")) { un = "us"; } else { un = "ca"; }
+				URL url = new URL("https://api.forecast.io/forecast/"+key+"/"+latitude+","+longitude+"?lang="+language+"&units="+un);
+				new WebRequestTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
+			} catch (MalformedURLException e) {
+				System.out.println("MalformedURLException...");
+			}
+			Toast.makeText(MainActivity.this, statusline,Toast.LENGTH_SHORT).show();
+
+
+
+		} else {
+			System.out.println("No GPS found");
+			Toast.makeText(this, "No GPS found", Toast.LENGTH_SHORT).show();
+
+			// leads to the settings because there is no last known location
+			//Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+			//startActivity(intent);
+		}
+
+/*
+//		pass=1;
+		System.out.println("init DataManager()");
 		ReconSDKManager mDataManager   = ReconSDKManager.Initialize(this);
+		System.out.println("DataManager receivedata");
 		mDataManager.receiveData(this, ReconEvent.TYPE_LOCATION);
+		System.out.println("close DataManager()");
 		mDataManager.unregisterListener(ReconEvent.TYPE_LOCATION);
-		textView.setText("Waiting for GPS fix...");
-		System.out.println("Waiting for GPS fix...");
+*/
 	}
 		
-		public void onReceiveCompleted(int status, ReconDataResult result)
+/*		public void onReceiveCompleted(int status, ReconDataResult result)
 		{
 //			if (pass==1) {
 				
@@ -282,49 +350,40 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 			        System.out.println("Communication Failure with Transcend Service");
 			        return;
 			    }
-			    pass++;
+//			    pass++;
 			    ReconLocation rloc = (ReconLocation)result.arrItems.get(0);
 			    Location loc = rloc.GetLocation();
 			    rloc.GetPreviousLocation();
-
 			    if (loc != ReconLocation.INVALID_LOCATION)
 			    {
 			        latitude=loc.getLatitude();
 			        longitude=loc.getLongitude();
 			        
-			        System.out.println("Lat trouve:"+latitude+" / long:"+longitude);
+			        System.out.println("New Lat trouve:"+latitude+" / long:"+longitude);
 					oldLatitude=latitude; oldLongitude=longitude;
-					statusline="(last refresh:";
+//					statusline="(last refresh:";
 			    } else {
-			    	statusline="No GPS. Previous location (last : ";
-					Toast.makeText(this, "No GPS", Toast.LENGTH_SHORT).show();
+			    	statusline="No GPS. Previous location used";
 			    	latitude=oldLatitude; longitude=oldLongitude;
-			    	//		        
-			    	//	remplacement de la localisation pour test	        
-			    	//		        
-			    	//latitude=50.647392; longitude=3.130481; // my home
-			    	//latitude=45.092624; longitude=6.068348; // alpe d'huez
-			        //latitude=45.125263; longitude=6.127609; // Pic Blanc
-			        //latitude=41.919229; longitude=8.738635; //Ajaccio
-			        //latitude=46.192683; longitude=48.205964; //Russie
-			        //latitude=49.168602; longitude=25.351872; //bulgarie
-			        //latitude=36.752887; longitude=3.042048; //alger
 
 			    }
-				System.out.println("Fetching data...");
-		        textView.setText("Fetching data...");
+				//
+				//	remplacement de la localisation pour test
+				//
+				//latitude=50.647392; longitude=3.130481; // my home
+				latitude=45.092624; longitude=6.068348; // alpe d'huez
+				//latitude=45.125263; longitude=6.127609; // Pic Blanc
+				//latitude=41.919229; longitude=8.738635; //Ajaccio
+				//latitude=46.192683; longitude=48.205964; //Russie
+				//latitude=49.168602; longitude=25.351872; //bulgarie
+				//latitude=36.752887; longitude=3.042048; //alger
+
+			System.out.println("Fetching data...");
+//		        textView.setText("Fetching data...");
 				try {
 					if (unit.equals("F")) { un = "us"; } else { un = "ca"; }
 					URL url = new URL("https://api.forecast.io/forecast/"+key+"/"+latitude+","+longitude+"?lang="+language+"&units="+un);
-					//new HashMap<String, List<String>>();
-					//sendRequest(new ReconHttpRequest("GET", url, 5000,null , null));
 					new WebRequestTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
-					System.out.println("mon gettext=" + textView.getText());
-					if (!statustoast.equals("")) {
-						Toast.makeText(this, statustoast, Toast.LENGTH_SHORT).show();
-						System.out.println("Statustoast="+statustoast );
-						statustoast="";
-					}
 				} catch (MalformedURLException e) {
 					System.out.println("MalformedURLException...");
 				}
@@ -336,7 +395,7 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 			// TODO Auto-generated method stub
 			System.out.println("boucleX");
 		}
-		
+*/
 		public String DoubleToP(String sourceDouble) {
     		DecimalFormat df = new DecimalFormat("#");    		
     		double db=Double.valueOf(sourceDouble);
@@ -367,10 +426,10 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 					System.out.println("Error: " +  response.getResponseMessage());
 				}
 			} catch (Exception e) {
-				System.out.println("No Internet Access");
-//				textView.setText("No Internet Access");
-				statustoast="No Internet Access";
-						e.printStackTrace();
+				System.out.println("HUD not connected - No Internet");
+				Toast.makeText(MainActivity.this, "HUD not connected - No Internet", Toast.LENGTH_LONG).show();
+				statusline="HUD not connected - No Internet";
+				e.printStackTrace();
 			}
 			return null;
 		}
@@ -378,7 +437,7 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 		@Override
 		protected void onPostExecute(String result) {
 			if (result != null) {
-				textView.setText("Data received...");
+//				textView.setText("Data received...");
 				PreviousResult=result;
 				SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
 				SharedPreferences.Editor editor = preferences.edit();
@@ -389,54 +448,42 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 				onDisplay(result);
 			}
 			else {
-				textView.setText("No Internet");
+//				textView.setText("No Internet");
 				onDisplay(PreviousResult);
 			}
 		}
 
 	}
 
-	/*
-		public void sendRequest(ReconHttpRequest request) {
-			if (-1 == client.sendRequest(request)) {
-				System.out.println("HUD not connected - No Internet");
-		        textView.setText("No Internet");
-		        statusline="No Internet (last data:";
-				onDisplay(PreviousResult);
-			} else {
-				System.out.println("Request Sent");
-			}
+	private IReconHttpCallback clientCallback = new IReconHttpCallback() {
+		@Override
+		public void onReceive(int requestId, ReconHttpResponse response) {
+//			textView.setText("Data received...");
+			result=new String(response.getBody());
+			PreviousResult=result;
+			SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
+			SharedPreferences.Editor editor = preferences.edit();
+			editor.putString("PreviousResult",PreviousResult);
+			editor.apply();
+			oldLatitude=latitude; oldLongitude=longitude;
+			System.out.println("Displaying data...");
+			onDisplay(result);
 		}
-*/
-		private IReconHttpCallback clientCallback = new IReconHttpCallback() {
-			@Override
-			public void onReceive(int requestId, ReconHttpResponse response) {
-				textView.setText("Data received...");
-				result=new String(response.getBody());
-				PreviousResult=result;
-				SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
-				SharedPreferences.Editor editor = preferences.edit();
-				editor.putString("PreviousResult",PreviousResult);
-				editor.apply();
-				oldLatitude=latitude; oldLongitude=longitude;
-				System.out.println("Displaying data...");
-				onDisplay(result);
-			}
 			
-			@Override
-			public void onError(int requestId, ERROR_TYPE type, String message) {
-				textView.setText("(TimeOut)");
-		        button_refresh.setVisibility(View.VISIBLE);
-		        refreshInProgress=false;
-				System.out.println("Error: " + type.toString() + "(" + message + ")");
-			}
-		};
+		@Override
+		public void onError(int requestId, ERROR_TYPE type, String message) {
+//			textView.setText("(TimeOut)");
+			button_refresh.setVisibility(View.VISIBLE);
+			refreshInProgress=false;
+			System.out.println("Error: " + type.toString() + "(" + message + ")");
+		}
+	};
 
-	    public static String headingToString2(double x)
-	    {
-	        String directions[] = {"N", "NE", "E", "SE", "S", "SW", "W", "NW", "N"};
-	        return directions[ (int)Math.round((  ((double)x % 360) / 45)) ];
-	    }
+	public static String headingToString2(double x)
+	{
+		String directions[] = {"N", "NE", "E", "SE", "S", "SW", "W", "NW", "N"};
+		return directions[ (int)Math.round((  ((double)x % 360) / 45)) ];
+	}
 
 	@Override
 	public void onDeviceName(String deviceName) {
@@ -451,10 +498,42 @@ public class MainActivity extends Activity implements IReconDataReceiver, IHUDCo
 	@Override
 	public void onNetworkEvent(NetworkEvent networkEvent, boolean hasNetworkAccess) {
 		if(!hasNetworkAccess){
-			System.out.println("HUD not connected - No Internet");
-			textView.setText("No Internet");
-			statusline="No Internet (last data:";
+			System.out.println("HUD not connected (onNetworkEvent)- No Internet");
+			Toast.makeText(MainActivity.this, "HUD not connected - No Internet", Toast.LENGTH_LONG).show();
+//			textView.setText("No Internet");
+			statusline="HUD not connected - No Internet";
 			onDisplay(PreviousResult);
 		}
 	}
+
+	private class MyLocationListener implements LocationListener {
+
+		@Override
+		public void onLocationChanged(Location location) {
+			// Initialize the location fields
+		}
+
+		@Override
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+			System.out.println("Location OnStatusChanged, status="+status);
+			Toast.makeText(MainActivity.this, provider + "'s status changed to "+status +"!",
+					Toast.LENGTH_SHORT).show();
+		}
+
+		@Override
+		public void onProviderEnabled(String provider) {
+			System.out.println("Location onProviderDisabled");
+			Toast.makeText(MainActivity.this, "Provider " + provider + " enabled!",
+					Toast.LENGTH_SHORT).show();
+
+		}
+
+		@Override
+		public void onProviderDisabled(String provider) {
+			System.out.println("Location onProviderDisabled");
+			Toast.makeText(MainActivity.this, "Provider " + provider + " disabled!",
+					Toast.LENGTH_SHORT).show();
+		}
+	}
+
 }

@@ -71,7 +71,6 @@ public class DetailActivity extends Activity implements IReconDataReceiver, IHUD
 
         System.load("/system/lib/libreconinstruments_jni.so");
         mHUDConnectivityManager = (HUDConnectivityManager) HUDOS.getHUDService(HUDOS.HUD_CONNECTIVITY_SERVICE);
-
         TimeZone tz = TimeZone.getDefault();
         setContentView(R.layout.activity_detail);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -260,7 +259,7 @@ public class DetailActivity extends Activity implements IReconDataReceiver, IHUD
         result="";
         //client = new ReconOSHttpClient(this, clientCallback);
         Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
-        pass=1;
+//        pass=1;
         ReconSDKManager mDataManager   = ReconSDKManager.Initialize(this);
         mDataManager.receiveData(this, ReconEvent.TYPE_LOCATION);
         mDataManager.unregisterListener(ReconEvent.TYPE_LOCATION);
@@ -270,14 +269,14 @@ public class DetailActivity extends Activity implements IReconDataReceiver, IHUD
 
     public void onReceiveCompleted(int status, ReconDataResult result)
     {
-        if (pass==1) {
+//        if (pass==1) {
 
             if (status != ReconSDKManager.STATUS_OK)
             {
                 System.out.println("Communication Failure with Transcend Service");
                 return;
             }
-            pass++;
+//            pass++;
             ReconLocation rloc = (ReconLocation)result.arrItems.get(0);
             Location loc = rloc.GetLocation();
             rloc.GetPreviousLocation();
@@ -315,7 +314,7 @@ public class DetailActivity extends Activity implements IReconDataReceiver, IHUD
             } catch (MalformedURLException e) {
                 System.out.println("MalformedURLException...");
             }
-        }
+//        }
     }
 
     @Override
