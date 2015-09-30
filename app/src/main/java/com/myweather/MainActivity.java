@@ -99,12 +99,12 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 	    UpOption = false;
 		File file = new File("/storage/sdcard0/ReconApps/MyWeather2/"+"Mydebug");
 		if (file.exists() == true) { Mydebug=true; } else { Mydebug=false;}
-		System.out.println("Mydebug: ("+Mydebug+")");
+		System.out.println("Mydebug: (" + Mydebug + ")");
 	}
 	
 	@Override 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		System.out.println("Keydown: ("+keyCode+")");
+		System.out.println("Keydown: (" + keyCode + ")");
 	    switch (keyCode) {
 	        case KeyEvent.KEYCODE_DPAD_DOWN :
 	        {
@@ -167,6 +167,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 	
     @Override
 	protected void onDestroy() {
+		locationManager.removeUpdates(mylistener);
 		SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = preferences.edit();
 		editor.putString("latitude", String.valueOf(latitude) );
@@ -260,7 +261,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     
 	private void doRefresh() {
 		System.out.println("doRefresh()");
-		result="";
+		result=""; statusline="";
 		Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
 
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -301,7 +302,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			//	remplacement de la localisation pour test
 			//
 			//latitude=50.647392; longitude=3.130481; // my home
-			latitude=45.092624; longitude=6.068348; // alpe d'huez
+			//latitude=45.092624; longitude=6.068348; // alpe d'huez
 			//latitude=45.125263; longitude=6.127609; // Pic Blanc
 			//latitude=41.919229; longitude=8.738635; //Ajaccio
 			//latitude=46.192683; longitude=48.205964; //Russie
@@ -317,10 +318,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			} catch (MalformedURLException e) {
 				System.out.println("MalformedURLException...");
 			}
-			Toast.makeText(MainActivity.this, statusline,Toast.LENGTH_SHORT).show();
-
-
-
+			if (!statusline.equals("")) { Toast.makeText(MainActivity.this, statusline,Toast.LENGTH_SHORT).show(); }
 		} else {
 			System.out.println("No GPS found");
 			Toast.makeText(this, "No GPS found", Toast.LENGTH_SHORT).show();
@@ -415,21 +413,24 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			URL url = params[0];
 			HUDHttpRequest request = new HUDHttpRequest(RequestMethod.GET, url);
 			HUDHttpResponse response;
+			System.out.println("try get "+url);
 			try {
 				response = mHUDConnectivityManager.sendWebRequest(request);
 				if ((response.getResponseCode() == 200) && (response.hasBody())) {
+					System.out.println("Response.sendWebRequest = 200");
 					return new String(response.getBody());
 				}else {
 //					textView.setText("(TimeOut)");
 //					button_refresh.setVisibility(View.VISIBLE);
+					System.out.println("Response.sendWebRequest != 200");
 					refreshInProgress=false;
 					System.out.println("Error: " +  response.getResponseMessage());
 				}
 			} catch (Exception e) {
 				System.out.println("HUD not connected - No Internet");
-				Toast.makeText(MainActivity.this, "HUD not connected - No Internet", Toast.LENGTH_LONG).show();
+//				Toast.makeText(MainActivity.this, "HUD not connected - No Internet", Toast.LENGTH_LONG).show();
 				statusline="HUD not connected - No Internet";
-				e.printStackTrace();
+//				e.printStackTrace();
 			}
 			return null;
 		}
@@ -455,7 +456,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 
 	}
 
-	private IReconHttpCallback clientCallback = new IReconHttpCallback() {
+/*	private IReconHttpCallback clientCallback = new IReconHttpCallback() {
 		@Override
 		public void onReceive(int requestId, ReconHttpResponse response) {
 //			textView.setText("Data received...");
@@ -478,7 +479,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			System.out.println("Error: " + type.toString() + "(" + message + ")");
 		}
 	};
-
+*/
 	public static String headingToString2(double x)
 	{
 		String directions[] = {"N", "NE", "E", "SE", "S", "SW", "W", "NW", "N"};
