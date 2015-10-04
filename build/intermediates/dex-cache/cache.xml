@@ -2,46 +2,53 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\BL5849\git\MyWeather2.0\app\libs\ForecastIOLib-1.5.1-jar-with-dependencies.jar"
+        jar="C:\Users\B1g0n3\git\MyWeather2.0\app\build\intermediates\exploded-aar\MyWeather2.0\reconUI\unspecified\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="facdb8d90983fa7e0b380e7d813aa989ea611c06">
-        <dex dex="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\ForecastIOLib-1.5.1-jar-with-dependencies-0c6bffb81d8976b2be7db322bf29809553481d06.jar" />
+        sha1="6fc2b23fdd514b9c66cc5474fbdc9aabddb9fabf">
+        <dex dex="C:\Users\B1g0n3\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\classes-3c3fce159b2fdad1e5f6d29411fe9980fbc60be5.jar" />
     </item>
     <item
-        jar="C:\Users\BL5849\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-1329692b428c2b6214f8bed35e8327ffe7933b22.jar" />
-    </item>
-    <item
-        jar="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\classes-3a5e265211876a1879b2a1879759c4cd3efd9531.jar" />
-    </item>
-    <item
-        jar="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-bec8d8469e5271ee88196c23b52bf222f2e406b3.jar" />
-    </item>
-    <item
-        jar="C:\Users\BL5849\git\MyWeather2.0\app\libs\recon_sdk_2.0.1.jar"
+        jar="C:\Users\B1g0n3\git\MyWeather2.0\app\libs\recon_sdk_2.0.1.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="799ac9696306372eea5b322699d37f14a9bbb1a7">
-        <dex dex="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\recon_sdk_2.0.1-08848ec65c475b385a773fc61be55b70a0fd14a3.jar" />
+        <dex dex="C:\Users\B1g0n3\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\recon_sdk_2.0.1-6c7057250f2c7c27ef448e1d19bd3b72169e019a.jar" />
     </item>
     <item
-        jar="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\exploded-aar\MyWeather2.0\library\unspecified\jars\classes.jar"
+        jar="C:\Users\B1g0n3\git\MyWeather2.0\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="975054e4b9f7522fe039e0ca483b551fc01a99de">
-        <dex dex="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\classes-3f41a88e8479ca107608160d22e07a95cfaea9dd.jar" />
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\B1g0n3\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\classes-11855f22daeb677c3d48f2d0b383d630a8d536e9.jar" />
+    </item>
+    <item
+        jar="C:\Users\B1g0n3\git\MyWeather2.0\app\build\intermediates\exploded-aar\MyWeather2.0\library\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0f06112f5de6c3126107e219c338c97c1c83c7b7">
+        <dex dex="C:\Users\B1g0n3\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\classes-66908685422f22ca996a5395a996b52ead632e1d.jar" />
+    </item>
+    <item
+        jar="C:\Users\B1g0n3\git\MyWeather2.0\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\Users\B1g0n3\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-c38af5c50e171188ddd43558a942b2e49542b340.jar" />
+    </item>
+    <item
+        jar="C:\Users\B1g0n3\git\MyWeather2.0\app\libs\ForecastIOLib-1.5.1-jar-with-dependencies.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="facdb8d90983fa7e0b380e7d813aa989ea611c06">
+        <dex dex="C:\Users\B1g0n3\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\ForecastIOLib-1.5.1-jar-with-dependencies-7a841a8127561e441745f55e71ed3d5e68904f43.jar" />
+    </item>
+    <item
+        jar="D:\Program Files\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="C:\Users\B1g0n3\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-ed148b79a2e32691150cd675671d029625c3d8f8.jar" />
     </item>
 
 </items>

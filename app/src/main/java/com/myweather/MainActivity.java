@@ -15,9 +15,11 @@ import com.github.dvdme.ForecastIOLib.FIOHourly;
 import com.github.dvdme.ForecastIOLib.ForecastIO;
 import com.reconinstruments.ReconSDK.*;
 import com.reconinstruments.os.HUDOS;
-import com.reconinstruments.webapi.IReconHttpCallback;
-import com.reconinstruments.webapi.ReconHttpRequest;
-import com.reconinstruments.webapi.ReconHttpResponse;
+import com.reconinstruments.ui.*;
+
+import com.reconinstruments.ui.dialog.BaseDialog;
+import com.reconinstruments.ui.dialog.DialogBuilder;
+import com.reconinstruments.ui.list.SimpleListActivity;
 import com.reconinstruments.webapi.ReconOSHttpClient;
 
 import com.reconinstruments.os.connectivity.HUDConnectivityManager;
@@ -51,7 +53,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity implements IHUDConnectivity {
+//public class MainActivity extends Activity implements IHUDConnectivity {
+public class MainActivity extends SimpleListActivity implements IHUDConnectivity {
 //public class MainActivity extends Activity implements IReconDataReceiver, IHUDConnectivity {
 
 	private LocationManager locationManager;
@@ -101,7 +104,29 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		if (file.exists() == true) { Mydebug=true; } else { Mydebug=false;}
 		System.out.println("Mydebug: (" + Mydebug + ")");
 	}
-	
+
+	private void createPopupDialog() {
+		new DialogBuilder(this).setTitle("Warning").setSubtitle("Showing for 2 seconds").setWarningIcon().setDismissTimeout().createDialog().show();
+	}
+
+	private void createProgressDialog() {
+		new DialogBuilder(this).setTitle("Refresh").setSubtitle("(press select to finish)").showProgress().setOnKeyListener(new BaseDialog.OnKeyListener() {
+			@Override
+			public boolean onKey(BaseDialog dialog, int keyCode, KeyEvent event) {
+				if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_DPAD_CENTER) {
+					ImageView icon = (ImageView) dialog.getView().findViewById(R.id.icon);
+					icon.setImageResource(R.drawable.icon_checkmark);
+					icon.setVisibility(View.VISIBLE);
+					dialog.getView().findViewById(R.id.progress_bar).setVisibility(View.GONE);
+					dialog.setDismissTimeout(2);
+					return true;
+				}
+				return false;
+			}
+		}).createDialog().show();
+	}
+
+
 	@Override 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		System.out.println("Keydown: (" + keyCode + ")");
@@ -263,7 +288,6 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		System.out.println("doRefresh()");
 		result=""; statusline="";
 		Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
-
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		// Define the criteria how to select the location provider
 		criteria = new Criteria();
@@ -322,7 +346,8 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		} else {
 			System.out.println("No GPS found");
 			Toast.makeText(this, "No GPS found", Toast.LENGTH_SHORT).show();
-
+			button_refresh.setVisibility(View.VISIBLE);
+			refreshInProgress=false;
 			// leads to the settings because there is no last known location
 			//Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 			//startActivity(intent);
@@ -447,6 +472,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 				oldLatitude=latitude; oldLongitude=longitude;
 				System.out.println("Displaying data...");
 				onDisplay(result);
+				System.out.println("Data displayed...");
 			}
 			else {
 //				textView.setText("No Internet");

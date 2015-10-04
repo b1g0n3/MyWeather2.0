@@ -29,4 +29,5 @@ dependencies {
     compile files('libs/recon_sdk_2.0.1.jar')
     compile 'com.android.support:support-v4:22.2.0'
     compile project(':library')
+    compile project(':reconUI')
 }

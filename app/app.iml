@@ -93,6 +93,7 @@
     <orderEntry type="library" exported="" name="support-v4-22.2.0" level="project" />
     <orderEntry type="library" exported="" name="ForecastIOLib-1.5.1-jar-with-dependencies" level="project" />
     <orderEntry type="library" exported="" name="recon_sdk_2.0.1" level="project" />
+    <orderEntry type="module" module-name="reconUI" exported="" />
     <orderEntry type="module" module-name="library" exported="" />
   </component>
 </module>
