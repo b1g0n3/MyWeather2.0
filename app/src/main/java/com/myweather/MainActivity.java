@@ -1,7 +1,11 @@
 package com.myweather;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
@@ -41,6 +45,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.StrictMode;
 import android.provider.Settings;
 import android.view.Gravity;
@@ -79,6 +84,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
     String PreviousResult,temp,statusline;
     boolean UpOption,refreshInProgress,Mydebug;
 	private String feel,press,wind,humid,un,tend;
+	DialogBuilder builder;
 	Button button_refresh;
     
 	@Override
@@ -100,9 +106,6 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 	    button_refresh = (Button) findViewById(R.id.button_refresh);
 	    statusline="(last source : ";
 	    UpOption = false;
-		File file = new File("/storage/sdcard0/ReconApps/MyWeather2/"+"Mydebug");
-		if (file.exists() == true) { Mydebug=true; } else { Mydebug=false;}
-		System.out.println("Mydebug: (" + Mydebug + ")");
 	}
 
 	private void createPopupDialog() {
@@ -129,7 +132,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 
 	@Override 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		System.out.println("Keydown: (" + keyCode + ")");
+		out("Keydown: (" + keyCode + ")");
 	    switch (keyCode) {
 	        case KeyEvent.KEYCODE_DPAD_DOWN :
 	        {
@@ -179,6 +182,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 	@Override
 	protected void onPause() {
 		mHUDConnectivityManager.unregister(this);
+		locationManager.removeUpdates(mylistener);
 		SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = preferences.edit();
 		editor.putString("latitude", String.valueOf(oldLatitude) );
@@ -214,7 +218,6 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
     	oldLatitude = Double.valueOf(temp);
     	temp = sharedpreferences.getString("longitude", "0");
     	oldLongitude = Double.valueOf(temp);
-//    	System.out.println("(Main onResume) Je lis values:"+oldLatitude+" / "+oldLongitude+" / "+language+" / "+unit+" / >"+PreviousResult+"<");
 	    LayoutInflater inflater = getLayoutInflater();
     	View layout = inflater.inflate(R.layout.toast,(ViewGroup) findViewById(R.id.toast_layout_root));
     	ImageView image = (ImageView) layout.findViewById(R.id.image);
@@ -266,15 +269,16 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
     		String substr=data.substring(data.indexOf("hourly\":{\"")+20);
     		substr=substr.substring(0, substr.indexOf("\""));
     		button_refresh.setVisibility(View.VISIBLE);
-    		refreshInProgress=false;
+			refreshInProgress=false;
+
     	} else {
     		String icon1 = "@drawable/unknown";
     		Resources res = getResources();
     		int resourceId = res.getIdentifier(
     		   icon1, "drawable", getPackageName() );
     		iconimage.setImageResource(resourceId);
-    		System.out.println("nothing to display or bad json...");
-    		System.out.println("data="+data);
+    		out("nothing to display or bad json...");
+    		out("data=" + data);
     		UpOption=false;
 //	        textView.setText("nothing to display...");
 //	        button_refresh.setVisibility(View.VISIBLE);
@@ -283,11 +287,28 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
     }
     
 ////////////////////////////////////////////////////
-    
+
+
 	private void doRefresh() {
-		System.out.println("doRefresh()");
+		out("doRefresh()");
 		result=""; statusline="";
-		Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
+//		new DialogBuilder(this).setTitle("Refresh data").setSubtitle("(-)").showProgress().createDialog().show();
+		out("1");
+		DialogBuilder builder = new DialogBuilder(this);
+		builder.setTitle("Refresh data").setSubtitle("(Please wait)").showProgress().setDismissTimeout(3);
+		out("2");
+		builder.createDialog().show();
+		out("3");
+/*		BaseDialog dialog;
+		ImageView icon = (ImageView)dialog.getView().findViewById(R.id.icon);
+		icon.setImageResource(R.drawable.icon_checkmark);
+		icon.setVisibility(View.VISIBLE);
+		dialog.getView().findViewById(R.id.progress_bar).setVisibility(View.GONE);
+		dialog.setDismissTimeout(2);
+*/
+//		builder.setDismissTimeout(5);
+		out("4");
+//		Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		// Define the criteria how to select the location provider
 		criteria = new Criteria();
@@ -314,11 +335,11 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 				latitude=location.getLatitude();
 				longitude=location.getLongitude();
 
-				System.out.println("New Lat trouve:"+latitude+" / long:"+longitude);
+				out("New Lat trouve:" + latitude + " / long:" + longitude);
 				oldLatitude=latitude; oldLongitude=longitude;
 //			statusline="(last refresh:";
 			} else {
-				System.out.println("no Lat trouve:");
+				out("no Lat trouve:");
 				statusline="No GPS. Previous location used";
 				latitude=oldLatitude; longitude=oldLongitude;
 			}
@@ -333,18 +354,18 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 			//latitude=49.168602; longitude=25.351872; //bulgarie
 			//latitude=36.752887; longitude=3.042048; //alger
 
-			System.out.println("Fetching data...");
+			out("Fetching data...");
 //		        textView.setText("Fetching data...");
 			try {
 				if (unit.equals("F")) { un = "us"; } else { un = "ca"; }
 				URL url = new URL("https://api.forecast.io/forecast/"+key+"/"+latitude+","+longitude+"?lang="+language+"&units="+un);
 				new WebRequestTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
 			} catch (MalformedURLException e) {
-				System.out.println("MalformedURLException...");
+				out("MalformedURLException...");
 			}
 			if (!statusline.equals("")) { Toast.makeText(MainActivity.this, statusline,Toast.LENGTH_SHORT).show(); }
 		} else {
-			System.out.println("No GPS found");
+			out("No GPS found");
 			Toast.makeText(this, "No GPS found", Toast.LENGTH_SHORT).show();
 			button_refresh.setVisibility(View.VISIBLE);
 			refreshInProgress=false;
@@ -353,13 +374,24 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 			//startActivity(intent);
 		}
 
+		out("0-1");
+//		ImageView icon = (ImageView)builder.getView().findViewById(R.id.icon);
+//		icon.setImageResource(R.drawable.icon_checkmark);
+//		icon.setVisibility(View.VISIBLE);
+//				.createDialog().dismiss();
+//		dialog.getView().findViewById(R.id.progress_bar).setVisibility(View.GONE);
+//		dialog.setDismissTimeout(2);
+
+//		builder.createDialog().dismiss();
+		out("0-2");
+
 /*
 //		pass=1;
-		System.out.println("init DataManager()");
+		out("init DataManager()");
 		ReconSDKManager mDataManager   = ReconSDKManager.Initialize(this);
-		System.out.println("DataManager receivedata");
+		out("DataManager receivedata");
 		mDataManager.receiveData(this, ReconEvent.TYPE_LOCATION);
-		System.out.println("close DataManager()");
+		out("close DataManager()");
 		mDataManager.unregisterListener(ReconEvent.TYPE_LOCATION);
 */
 	}
@@ -370,7 +402,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 				
 			    if (status != ReconSDKManager.STATUS_OK)
 			    {
-			        System.out.println("Communication Failure with Transcend Service");
+			        out("Communication Failure with Transcend Service");
 			        return;
 			    }
 //			    pass++;
@@ -382,7 +414,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 			        latitude=loc.getLatitude();
 			        longitude=loc.getLongitude();
 			        
-			        System.out.println("New Lat trouve:"+latitude+" / long:"+longitude);
+			        out("New Lat trouve:"+latitude+" / long:"+longitude);
 					oldLatitude=latitude; oldLongitude=longitude;
 //					statusline="(last refresh:";
 			    } else {
@@ -401,14 +433,14 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 				//latitude=49.168602; longitude=25.351872; //bulgarie
 				//latitude=36.752887; longitude=3.042048; //alger
 
-			System.out.println("Fetching data...");
+			out("Fetching data...");
 //		        textView.setText("Fetching data...");
 				try {
 					if (unit.equals("F")) { un = "us"; } else { un = "ca"; }
 					URL url = new URL("https://api.forecast.io/forecast/"+key+"/"+latitude+","+longitude+"?lang="+language+"&units="+un);
 					new WebRequestTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
 				} catch (MalformedURLException e) {
-					System.out.println("MalformedURLException...");
+					out("MalformedURLException...");
 				}
 //			}
 		}
@@ -416,7 +448,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 		@Override
 		public void onFullUpdateCompleted(int arg0, ArrayList<ReconDataResult> arg1) {
 			// TODO Auto-generated method stub
-			System.out.println("boucleX");
+			out("boucleX");
 		}
 */
 		public String DoubleToP(String sourceDouble) {
@@ -438,21 +470,21 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 			URL url = params[0];
 			HUDHttpRequest request = new HUDHttpRequest(RequestMethod.GET, url);
 			HUDHttpResponse response;
-			System.out.println("try get "+url);
+			out("try get " + url);
 			try {
 				response = mHUDConnectivityManager.sendWebRequest(request);
 				if ((response.getResponseCode() == 200) && (response.hasBody())) {
-					System.out.println("Response.sendWebRequest = 200");
+					out("Response.sendWebRequest = 200");
 					return new String(response.getBody());
 				}else {
 //					textView.setText("(TimeOut)");
 //					button_refresh.setVisibility(View.VISIBLE);
-					System.out.println("Response.sendWebRequest != 200");
+					out("Response.sendWebRequest != 200");
 					refreshInProgress=false;
-					System.out.println("Error: " +  response.getResponseMessage());
+					out("Error: " + response.getResponseMessage());
 				}
 			} catch (Exception e) {
-				System.out.println("HUD not connected - No Internet");
+				out("HUD not connected - No Internet");
 //				Toast.makeText(MainActivity.this, "HUD not connected - No Internet", Toast.LENGTH_LONG).show();
 				statusline="HUD not connected - No Internet";
 //				e.printStackTrace();
@@ -467,12 +499,15 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 				PreviousResult=result;
 				SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
 				SharedPreferences.Editor editor = preferences.edit();
-				editor.putString("PreviousResult",PreviousResult);
+				editor.putString("PreviousResult", PreviousResult);
 				editor.apply();
-				oldLatitude=latitude; oldLongitude=longitude;
-				System.out.println("Displaying data...");
+				oldLatitude = latitude; oldLongitude=longitude;
+				out("Displaying data...");
+//				out("0-1");
+//				builder.createDialog().dismiss();
+//				out("0-2");
 				onDisplay(result);
-				System.out.println("Data displayed...");
+				out("Data displayed...");
 			}
 			else {
 //				textView.setText("No Internet");
@@ -493,7 +528,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 			editor.putString("PreviousResult",PreviousResult);
 			editor.apply();
 			oldLatitude=latitude; oldLongitude=longitude;
-			System.out.println("Displaying data...");
+			out("Displaying data...");
 			onDisplay(result);
 		}
 			
@@ -502,7 +537,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 //			textView.setText("(TimeOut)");
 			button_refresh.setVisibility(View.VISIBLE);
 			refreshInProgress=false;
-			System.out.println("Error: " + type.toString() + "(" + message + ")");
+			out("Error: " + type.toString() + "(" + message + ")");
 		}
 	};
 */
@@ -525,11 +560,29 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 	@Override
 	public void onNetworkEvent(NetworkEvent networkEvent, boolean hasNetworkAccess) {
 		if(!hasNetworkAccess){
-			System.out.println("HUD not connected (onNetworkEvent)- No Internet");
+			out("HUD not connected (onNetworkEvent)- No Internet");
 			Toast.makeText(MainActivity.this, "HUD not connected - No Internet", Toast.LENGTH_LONG).show();
 //			textView.setText("No Internet");
 			statusline="HUD not connected - No Internet";
 			onDisplay(PreviousResult);
+		}
+	}
+
+	public void out(String Trace) {
+		System.out.println(Trace);
+		File file = new File(Environment.getExternalStorageDirectory()+"/ReconApps/MyWeather2/" + "Mydebug");
+		if (file.exists() == true) {
+			try {
+				System.out.println("write to file");
+				FileWriter fos = new FileWriter(Environment.getExternalStorageDirectory()+"/ReconApps/MyWeather2/" + "Mydebug",true);
+				fos.write(Trace+"\n");
+				fos.flush();
+				fos.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -542,24 +595,24 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 
 		@Override
 		public void onStatusChanged(String provider, int status, Bundle extras) {
-			System.out.println("Location OnStatusChanged, status="+status);
-			Toast.makeText(MainActivity.this, provider + "'s status changed to "+status +"!",
-					Toast.LENGTH_SHORT).show();
+			out("Location OnStatusChanged, status="+status);
+//			Toast.makeText(MainActivity.this, provider + "'s status changed to "+status +"!",
+//					Toast.LENGTH_SHORT).show();
 		}
 
 		@Override
 		public void onProviderEnabled(String provider) {
-			System.out.println("Location onProviderDisabled");
-			Toast.makeText(MainActivity.this, "Provider " + provider + " enabled!",
-					Toast.LENGTH_SHORT).show();
+			out("Location onProviderDisabled");
+//			Toast.makeText(MainActivity.this, "Provider " + provider + " enabled!",
+//					Toast.LENGTH_SHORT).show();
 
 		}
 
 		@Override
 		public void onProviderDisabled(String provider) {
-			System.out.println("Location onProviderDisabled");
-			Toast.makeText(MainActivity.this, "Provider " + provider + " disabled!",
-					Toast.LENGTH_SHORT).show();
+			out("Location onProviderDisabled");
+//			Toast.makeText(MainActivity.this, "Provider " + provider + " disabled!",
+//					Toast.LENGTH_SHORT).show();
 		}
 	}
 
