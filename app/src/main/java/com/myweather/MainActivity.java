@@ -12,6 +12,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.TimeZone;
 
 import com.github.dvdme.ForecastIOLib.FIOCurrently;
@@ -39,7 +40,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.location.Address;
 import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -57,6 +60,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 //public class MainActivity extends Activity implements IHUDConnectivity {
 public class MainActivity extends SimpleListActivity implements IHUDConnectivity {
@@ -83,9 +90,9 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
     String language,unit,vitesse;
     String PreviousResult,temp,statusline;
     boolean UpOption,refreshInProgress,Mydebug;
-	private String feel,press,wind,humid,un,tend;
+	private String feel,press,wind,humid,un,tend,city;
 	DialogBuilder builder;
-	Button button_refresh;
+//	Button button_refresh;
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -103,7 +110,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 		temperature = (TextView) findViewById(R.id.Temperature);
 		textressentie = (TextView) findViewById(R.id.textressentie);
     	iconimage = (ImageView) findViewById(R.id.icon);
-	    button_refresh = (Button) findViewById(R.id.button_refresh);
+//	    button_refresh = (Button) findViewById(R.id.button_refresh);
 	    statusline="(last source : ";
 	    UpOption = false;
 	}
@@ -153,7 +160,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 	        case KeyEvent.KEYCODE_DPAD_CENTER :
 	        {
 	        	if (!refreshInProgress) {
-		        	button_refresh.setVisibility(View.INVISIBLE);
+//		        	button_refresh.setVisibility(View.INVISIBLE);
 		        	refreshInProgress=true;
 		        	doRefresh();
 	        	}
@@ -268,7 +275,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 //    		textView.setText(statusline+currently.get().getByKey("time")+")");
     		String substr=data.substring(data.indexOf("hourly\":{\"")+20);
     		substr=substr.substring(0, substr.indexOf("\""));
-    		button_refresh.setVisibility(View.VISIBLE);
+//    		button_refresh.setVisibility(View.VISIBLE);
 			refreshInProgress=false;
 
     	} else {
@@ -291,14 +298,12 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 
 	private void doRefresh() {
 		out("doRefresh()");
-		result=""; statusline="";
+		result = "";
+		statusline = "";
 //		new DialogBuilder(this).setTitle("Refresh data").setSubtitle("(-)").showProgress().createDialog().show();
-		out("1");
 		DialogBuilder builder = new DialogBuilder(this);
 		builder.setTitle("Refresh data").setSubtitle("(Please wait)").showProgress().setDismissTimeout(3);
-		out("2");
 		builder.createDialog().show();
-		out("3");
 /*		BaseDialog dialog;
 		ImageView icon = (ImageView)dialog.getView().findViewById(R.id.icon);
 		icon.setImageResource(R.drawable.icon_checkmark);
@@ -307,7 +312,6 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 		dialog.setDismissTimeout(2);
 */
 //		builder.setDismissTimeout(5);
-		out("4");
 //		Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		// Define the criteria how to select the location provider
@@ -329,24 +333,25 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 
 			// location updates: at least 1 meter and 200millsecs change
 			locationManager.requestLocationUpdates(provider, 2000, 100, mylistener);
-			String a=""+location.getLatitude();
-			if (location != null)
-			{
-				latitude=location.getLatitude();
-				longitude=location.getLongitude();
+			String a = "" + location.getLatitude();
+			if (location != null) {
+				latitude = location.getLatitude();
+				longitude = location.getLongitude();
 
 				out("New Lat trouve:" + latitude + " / long:" + longitude);
-				oldLatitude=latitude; oldLongitude=longitude;
+				oldLatitude = latitude;
+				oldLongitude = longitude;
 //			statusline="(last refresh:";
 			} else {
 				out("no Lat trouve:");
-				statusline="No GPS. Previous location used";
-				latitude=oldLatitude; longitude=oldLongitude;
+				statusline = "No GPS. Previous location used";
+				latitude = oldLatitude;
+				longitude = oldLongitude;
 			}
 			//
 			//	remplacement de la localisation pour test
 			//
-			//latitude=50.647392; longitude=3.130481; // my home
+			latitude=50.647392; longitude=3.130481; // my home
 			//latitude=45.092624; longitude=6.068348; // alpe d'huez
 			//latitude=45.125263; longitude=6.127609; // Pic Blanc
 			//latitude=41.919229; longitude=8.738635; //Ajaccio
@@ -356,112 +361,46 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 
 			out("Fetching data...");
 //		        textView.setText("Fetching data...");
+				if (unit.equals("F")) {
+					un = "us";
+				} else {
+					un = "ca";
+				}
+				city="";
+			URL url = null;
 			try {
-				if (unit.equals("F")) { un = "us"; } else { un = "ca"; }
-				URL url = new URL("https://api.forecast.io/forecast/"+key+"/"+latitude+","+longitude+"?lang="+language+"&units="+un);
+				url = new URL("http://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitude + "," + longitude + "&sensor=false");
+				new WebRequestTask2().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
+				url = new URL("https://api.forecast.io/forecast/" + key + "/" + latitude + "," + longitude + "?lang=" + language + "&units=" + un);
 				new WebRequestTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
 			} catch (MalformedURLException e) {
-				out("MalformedURLException...");
+				e.printStackTrace();
 			}
-			if (!statusline.equals("")) { Toast.makeText(MainActivity.this, statusline,Toast.LENGTH_SHORT).show(); }
+			if (!statusline.equals("")) {
+				Toast.makeText(MainActivity.this, statusline, Toast.LENGTH_SHORT).show();
+			}
 		} else {
 			out("No GPS found");
 			Toast.makeText(this, "No GPS found", Toast.LENGTH_SHORT).show();
-			button_refresh.setVisibility(View.VISIBLE);
-			refreshInProgress=false;
+//			button_refresh.setVisibility(View.VISIBLE);
+			refreshInProgress = false;
 			// leads to the settings because there is no last known location
 			//Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 			//startActivity(intent);
 		}
-
-		out("0-1");
-//		ImageView icon = (ImageView)builder.getView().findViewById(R.id.icon);
-//		icon.setImageResource(R.drawable.icon_checkmark);
-//		icon.setVisibility(View.VISIBLE);
-//				.createDialog().dismiss();
-//		dialog.getView().findViewById(R.id.progress_bar).setVisibility(View.GONE);
-//		dialog.setDismissTimeout(2);
-
-//		builder.createDialog().dismiss();
-		out("0-2");
-
-/*
-//		pass=1;
-		out("init DataManager()");
-		ReconSDKManager mDataManager   = ReconSDKManager.Initialize(this);
-		out("DataManager receivedata");
-		mDataManager.receiveData(this, ReconEvent.TYPE_LOCATION);
-		out("close DataManager()");
-		mDataManager.unregisterListener(ReconEvent.TYPE_LOCATION);
-*/
 	}
-		
-/*		public void onReceiveCompleted(int status, ReconDataResult result)
-		{
-//			if (pass==1) {
-				
-			    if (status != ReconSDKManager.STATUS_OK)
-			    {
-			        out("Communication Failure with Transcend Service");
-			        return;
-			    }
-//			    pass++;
-			    ReconLocation rloc = (ReconLocation)result.arrItems.get(0);
-			    Location loc = rloc.GetLocation();
-			    rloc.GetPreviousLocation();
-			    if (loc != ReconLocation.INVALID_LOCATION)
-			    {
-			        latitude=loc.getLatitude();
-			        longitude=loc.getLongitude();
-			        
-			        out("New Lat trouve:"+latitude+" / long:"+longitude);
-					oldLatitude=latitude; oldLongitude=longitude;
-//					statusline="(last refresh:";
-			    } else {
-			    	statusline="No GPS. Previous location used";
-			    	latitude=oldLatitude; longitude=oldLongitude;
 
-			    }
-				//
-				//	remplacement de la localisation pour test
-				//
-				//latitude=50.647392; longitude=3.130481; // my home
-				latitude=45.092624; longitude=6.068348; // alpe d'huez
-				//latitude=45.125263; longitude=6.127609; // Pic Blanc
-				//latitude=41.919229; longitude=8.738635; //Ajaccio
-				//latitude=46.192683; longitude=48.205964; //Russie
-				//latitude=49.168602; longitude=25.351872; //bulgarie
-				//latitude=36.752887; longitude=3.042048; //alger
+	public String DoubleToP(String sourceDouble) {
+		DecimalFormat df = new DecimalFormat("#");
+		double db=Double.valueOf(sourceDouble);
+		return df.format(db*100);
+	}
 
-			out("Fetching data...");
-//		        textView.setText("Fetching data...");
-				try {
-					if (unit.equals("F")) { un = "us"; } else { un = "ca"; }
-					URL url = new URL("https://api.forecast.io/forecast/"+key+"/"+latitude+","+longitude+"?lang="+language+"&units="+un);
-					new WebRequestTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
-				} catch (MalformedURLException e) {
-					out("MalformedURLException...");
-				}
-//			}
-		}
-
-		@Override
-		public void onFullUpdateCompleted(int arg0, ArrayList<ReconDataResult> arg1) {
-			// TODO Auto-generated method stub
-			out("boucleX");
-		}
-*/
-		public String DoubleToP(String sourceDouble) {
-    		DecimalFormat df = new DecimalFormat("#");    		
-    		double db=Double.valueOf(sourceDouble);
-			return df.format(db*100);
-		}
-
-		public String DoubleToI(String sourceDouble) {
-    		DecimalFormat df = new DecimalFormat("#");    		
-    		double db=Double.valueOf(sourceDouble);
-			return df.format(db);
-		}
+	public String DoubleToI(String sourceDouble) {
+		DecimalFormat df = new DecimalFormat("#");
+		double db=Double.valueOf(sourceDouble);
+		return df.format(db);
+	}
 
 	private class WebRequestTask extends AsyncTask<URL, Void, String> {
 
@@ -503,9 +442,6 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 				editor.apply();
 				oldLatitude = latitude; oldLongitude=longitude;
 				out("Displaying data...");
-//				out("0-1");
-//				builder.createDialog().dismiss();
-//				out("0-2");
 				onDisplay(result);
 				out("Data displayed...");
 			}
@@ -517,30 +453,56 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 
 	}
 
-/*	private IReconHttpCallback clientCallback = new IReconHttpCallback() {
+	private class WebRequestTask2 extends AsyncTask<URL, Void, String> {
+
 		@Override
-		public void onReceive(int requestId, ReconHttpResponse response) {
-//			textView.setText("Data received...");
-			result=new String(response.getBody());
-			PreviousResult=result;
-			SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
-			SharedPreferences.Editor editor = preferences.edit();
-			editor.putString("PreviousResult",PreviousResult);
-			editor.apply();
-			oldLatitude=latitude; oldLongitude=longitude;
-			out("Displaying data...");
-			onDisplay(result);
+		protected String doInBackground(URL... params) {
+			URL url = params[0];
+			HUDHttpRequest request = new HUDHttpRequest(RequestMethod.GET, url);
+			HUDHttpResponse response;
+			out("try get city " + url);
+			try {
+				response = mHUDConnectivityManager.sendWebRequest(request);
+				if ((response.getResponseCode() == 200) && (response.hasBody())) {
+					out("Response.sendWebRequest = 200");
+					return new String(response.getBody());
+				}else {
+//					textView.setText("(TimeOut)");
+//					button_refresh.setVisibility(View.VISIBLE);
+					out("Response.sendWebRequest != 200");
+					refreshInProgress=false;
+					out("Error: " + response.getResponseMessage());
+				}
+			} catch (Exception e) {
+				out("HUD not connected - No Internet");
+//				Toast.makeText(MainActivity.this, "HUD not connected - No Internet", Toast.LENGTH_LONG).show();
+				statusline="HUD not connected - No Internet";
+//				e.printStackTrace();
+			}
+			return null;
 		}
-			
+
 		@Override
-		public void onError(int requestId, ERROR_TYPE type, String message) {
-//			textView.setText("(TimeOut)");
-			button_refresh.setVisibility(View.VISIBLE);
-			refreshInProgress=false;
-			out("Error: " + type.toString() + "(" + message + ")");
+		protected void onPostExecute(String result) {
+			if (result != null) {
+				out("City received...");
+				JSONObject jsonObject = new JSONObject();
+				try {
+					jsonObject = new JSONObject(result);
+					city = ((JSONArray)jsonObject.get("results")).getJSONObject(0).getJSONArray("address_components").getJSONObject(2).getString("short_name");
+					city=city+"("+((JSONArray)jsonObject.get("results")).getJSONObject(0).getJSONArray("address_components").getJSONObject(5).getString("short_name")+")";
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+				out("city="+city);
+			}
+			else {
+//				textView.setText("No Internet");
+			}
 		}
-	};
-*/
+
+	}
+
 	public static String headingToString2(double x)
 	{
 		String directions[] = {"N", "NE", "E", "SE", "S", "SW", "W", "NW", "N"};
@@ -573,7 +535,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 		File file = new File(Environment.getExternalStorageDirectory()+"/ReconApps/MyWeather2/" + "Mydebug");
 		if (file.exists() == true) {
 			try {
-				System.out.println("write to file");
+//				System.out.println("write to file");
 				FileWriter fos = new FileWriter(Environment.getExternalStorageDirectory()+"/ReconApps/MyWeather2/" + "Mydebug",true);
 				fos.write(Trace+"\n");
 				fos.flush();

@@ -25,355 +25,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3cfeb20-08ce-441e-b079-ffd6e5e4801c" name="Default" comment="Build 2">
-      <change type="DELETED" beforePath="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\ForecastIOLib-1.5.1-jar-with-dependencies-7a841a8127561e441745f55e71ed3d5e68904f43.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\classes-11855f22daeb677c3d48f2d0b383d630a8d536e9.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\classes-3c3fce159b2fdad1e5f6d29411fe9980fbc60be5.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\classes-66908685422f22ca996a5395a996b52ead632e1d.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-c38af5c50e171188ddd43558a942b2e49542b340.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\recon_sdk_2.0.1-6c7057250f2c7c27ef448e1d19bd3b72169e019a.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-ed148b79a2e32691150cd675671d029625c3d8f8.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/classes/debug/com/reconinstruments/ui/view/ButtonActionView$1.class" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/classes/debug/com/reconinstruments/ui/view/ButtonActionView$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/classes/release/com/reconinstruments/ui/view/ButtonActionView$1.class" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/classes/release/com/reconinstruments/ui/view/ButtonActionView$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/classes/debug/com/reconinstruments/ui/view/ButtonActionView.class" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/classes/debug/com/reconinstruments/ui/view/ButtonActionView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/classes/release/com/reconinstruments/ui/view/ButtonActionView.class" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/classes/release/com/reconinstruments/ui/view/ButtonActionView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/DaysActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/DaysActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/DetailActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/DetailActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/HoursActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/HoursActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$MyLocationListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$MyLocationListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$WebRequestTask.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$WebRequestTask.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/debug/org/lucasr/twowayview/TwoWayView.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/debug/org/lucasr/twowayview/TwoWayView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/classes/release/org/lucasr/twowayview/TwoWayView.class" afterPath="$PROJECT_DIR$/library/build/intermediates/classes/release/org/lucasr/twowayview/TwoWayView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/annotations.zip" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/annotations.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/annotations/debug/annotations.zip" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/annotations/debug/annotations.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/annotations/release/annotations.zip" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/annotations/release/annotations.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/reconinstruments/ui/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/reconinstruments/ui/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$menu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$menu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$raw.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$raw.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/SettingsActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/SettingsActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/WeatherAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/WeatherAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/library/unspecified/jars/classes.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/library/unspecified/jars/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/jars/classes.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/jars/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/release/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/outputs/aar/library-debug.aar" afterPath="$PROJECT_DIR$/library/build/outputs/aar/library-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/outputs/aar/library-release.aar" afterPath="$PROJECT_DIR$/library/build/outputs/aar/library-release.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/outputs/aar/reconUI-debug.aar" afterPath="$PROJECT_DIR$/reconUI/build/outputs/aar/reconUI-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/outputs/aar/reconUI-release.aar" afterPath="$PROJECT_DIR$/reconUI/build/outputs/aar/reconUI-release.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/library/build/intermediates/resources/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/resources/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/library/unspecified/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/library/unspecified/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/library/unspecified/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/library/unspecified/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/release/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/release/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/androidTest/debug/com/myweather/test/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/androidTest/debug/com/myweather/test/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/myweather/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/myweather/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/generated/source/buildConfig/androidTest/debug/org/lucasr/twowayview/test/BuildConfig.java" afterPath="$PROJECT_DIR$/library/build/generated/source/buildConfig/androidTest/debug/org/lucasr/twowayview/test/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/generated/source/buildConfig/debug/org/lucasr/twowayview/BuildConfig.java" afterPath="$PROJECT_DIR$/library/build/generated/source/buildConfig/debug/org/lucasr/twowayview/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/generated/source/buildConfig/release/org/lucasr/twowayview/BuildConfig.java" afterPath="$PROJECT_DIR$/library/build/generated/source/buildConfig/release/org/lucasr/twowayview/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/generated/source/buildConfig/androidTest/debug/com/reconinstruments/ui/test/BuildConfig.java" afterPath="$PROJECT_DIR$/reconUI/build/generated/source/buildConfig/androidTest/debug/com/reconinstruments/ui/test/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/generated/source/buildConfig/debug/com/reconinstruments/ui/BuildConfig.java" afterPath="$PROJECT_DIR$/reconUI/build/generated/source/buildConfig/debug/com/reconinstruments/ui/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/generated/source/buildConfig/release/com/reconinstruments/ui/BuildConfig.java" afterPath="$PROJECT_DIR$/reconUI/build/generated/source/buildConfig/release/com/reconinstruments/ui/BuildConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/myweather/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/myweather/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/MediaMetadataCompat.aidl" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/MediaMetadataCompat.aidl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/MediaMetadataCompat.aidl" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/MediaMetadataCompat.aidl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/MediaSessionCompat.aidl" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/MediaSessionCompat.aidl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/MediaSessionCompat.aidl" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/MediaSessionCompat.aidl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/ParcelableVolumeInfo.aidl" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/ParcelableVolumeInfo.aidl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/ParcelableVolumeInfo.aidl" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/ParcelableVolumeInfo.aidl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/PlaybackStateCompat.aidl" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/PlaybackStateCompat.aidl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/PlaybackStateCompat.aidl" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/session/PlaybackStateCompat.aidl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/myweather/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/myweather/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/reconinstruments/ui/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/reconinstruments/ui/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/org/lucasr/twowayview/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/org/lucasr/twowayview/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/generated/source/r/androidTest/debug/org/lucasr/twowayview/R.java" afterPath="$PROJECT_DIR$/library/build/generated/source/r/androidTest/debug/org/lucasr/twowayview/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/generated/source/r/androidTest/debug/com/reconinstruments/ui/R.java" afterPath="$PROJECT_DIR$/reconUI/build/generated/source/r/androidTest/debug/com/reconinstruments/ui/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/RatingCompat.aidl" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/RatingCompat.aidl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/RatingCompat.aidl" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/aidl/android/support/v4/media/RatingCompat.aidl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/activity_days.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/activity_days.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/activity_detail.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/activity_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/activity_hours.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/activity_hours.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/button_action.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/button_action.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/button_action.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/button_action.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/button_action.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/button_action.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/button_action.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/button_action.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/button_action.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/button_action.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/button_action.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/button_action.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/button_action.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/button_action.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_host.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_host.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_host.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_host.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_host.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_host.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_host.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_host.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_host.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_host.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_host.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_host.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_host.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_host.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_host_bold_text.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_host_bold_text.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_host_bold_text.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_host_bold_text.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_host_bold_text.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_host_bold_text.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_host_bold_text.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_host_bold_text.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_host_bold_text.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_host_bold_text.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_host_bold_text.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_host_bold_text.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_host_bold_text.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_host_bold_text.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_host_divider.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_host_divider.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_host_divider.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_host_divider.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_host_divider.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_host_divider.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_host_divider.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_host_divider.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_host_divider.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_host_divider.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_host_divider.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_host_divider.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_host_divider.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_host_divider.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_host_title_body.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_host_title_body.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_host_title_body.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_host_title_body.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_host_title_body.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_host_title_body.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_host_title_body.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_host_title_body.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_host_title_body.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_host_title_body.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_host_title_body.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_host_title_body.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_host_title_body.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_host_title_body.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_item_checkmark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_item_checkmark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_item_checkmark.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_item_checkmark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_item_checkmark.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_item_checkmark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_item_checkmark.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_item_checkmark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_item_checkmark.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_item_checkmark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_item_checkmark.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_item_checkmark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_item_checkmark.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_item_checkmark.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_item_checkmark_selector.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_item_checkmark_selector.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_item_checkmark_selector.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_item_checkmark_selector.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_item_checkmark_selector.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_item_checkmark_selector.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_item_checkmark_selector.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_item_checkmark_selector.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_item_checkmark_selector.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_item_checkmark_selector.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_item_checkmark_selector.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_item_checkmark_selector.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_item_checkmark_selector.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_item_checkmark_selector.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_item_icon.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_item_icon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_item_icon.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_item_icon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_item_icon.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_item_icon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_item_icon.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_item_icon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_item_icon.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_item_icon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_item_icon.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_item_icon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_item_icon.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_item_icon.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/carousel_item_push.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/carousel_item_push.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/carousel_item_push.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/carousel_item_push.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/carousel_item_push.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/carousel_item_push.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/carousel_item_push.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/carousel_item_push.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/carousel_item_push.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/carousel_item_push.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/carousel_item_push.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/carousel_item_push.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/carousel_item_push.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/carousel_item_push.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_item_title.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_item_title.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_item_title.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_item_title.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_item_title.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_item_title.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_item_title.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_item_title.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_item_title.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_item_title.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_item_title.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_item_title.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_item_title.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_item_title.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_item_title_icon_column.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/carousel_item_title_icon_column.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_item_title_icon_column.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/carousel_item_title_icon_column.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_item_title_icon_column.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/carousel_item_title_icon_column.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_item_title_icon_column.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/carousel_item_title_icon_column.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_item_title_icon_column.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/carousel_item_title_icon_column.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_item_title_icon_column.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/carousel_item_title_icon_column.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_item_title_icon_column.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/carousel_item_title_icon_column.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/menu/days.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/menu/days.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/dialog_standard.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/dialog_standard.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/dialog_standard.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/dialog_standard.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/dialog_standard.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/dialog_standard.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/dialog_standard.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/dialog_standard.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/dialog_standard.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/dialog_standard.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/dialog_standard.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/dialog_standard.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/dialog_standard.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/dialog_standard.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/fade_in_slide_in_bottom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/fade_in_slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/fade_in_slide_in_bottom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/fade_in_slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/fade_in_slide_in_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/fade_in_slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/fade_in_slide_in_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/fade_in_slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/fade_in_slide_in_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/fade_in_slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/fade_in_slide_in_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/fade_in_slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/fade_in_slide_in_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/fade_in_slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/fade_in_slide_in_left.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/fade_in_slide_in_left.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/fade_in_slide_in_left.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/fade_in_slide_in_left.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/fade_in_slide_in_left.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/fade_in_slide_in_left.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/fade_in_slide_in_left.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/fade_in_slide_in_left.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/fade_in_slide_in_left.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/fade_in_slide_in_left.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/fade_in_slide_in_left.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/fade_in_slide_in_left.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/fade_in_slide_in_left.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/fade_in_slide_in_left.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/fade_in_slide_in_right.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/fade_in_slide_in_right.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/fade_in_slide_in_right.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/fade_in_slide_in_right.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/fade_in_slide_in_right.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/fade_in_slide_in_right.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/fade_in_slide_in_right.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/fade_in_slide_in_right.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/fade_in_slide_in_right.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/fade_in_slide_in_right.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/fade_in_slide_in_right.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/fade_in_slide_in_right.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/fade_in_slide_in_right.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/fade_in_slide_in_right.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/fade_in_slide_in_top.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/fade_in_slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/fade_in_slide_in_top.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/fade_in_slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/fade_in_slide_in_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/fade_in_slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/fade_in_slide_in_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/fade_in_slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/fade_in_slide_in_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/fade_in_slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/fade_in_slide_in_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/fade_in_slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/fade_in_slide_in_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/fade_in_slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/fade_out.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/fade_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/fade_out.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/fade_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/fade_out.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/fade_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/fade_out.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/fade_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/fade_out.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/fade_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/fade_out.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/fade_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/fade_out.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/fade_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/list_item_standard_layout.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/list_item_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/list_item_standard_layout.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/list_item_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/list_item_standard_layout.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/list_item_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/list_item_standard_layout.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/list_item_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/list_item_standard_layout.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/list_item_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/list_item_standard_layout.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/list_item_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/list_item_standard_layout.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/list_item_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/list_standard_layout.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/layout/list_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/list_standard_layout.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/list_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/list_standard_layout.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/layout/list_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/list_standard_layout.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/layout/list_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/list_standard_layout.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/layout/list_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/list_standard_layout.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/layout/list_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/list_standard_layout.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/layout/list_standard_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/listview_header_row.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/listview_header_row.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/listview_item_row.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/listview_item_row.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/menu/main.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/menu/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeAssets/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResources/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResources/androidTest/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeResources/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeAssets/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeAssets/release/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeAssets/release/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeResources/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeResources/androidTest/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/packageResources/debug/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/packageResources/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/packageResources/release/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/packageResources/release/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/mergeAssets/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/mergeAssets/release/merger.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/mergeAssets/release/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/mergeResources/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/mergeResources/androidTest/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/mergeResources/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/mergeResources/release/merger.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/mergeResources/release/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/packageResources/debug/merger.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/packageResources/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/packageResources/release/merger.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/incremental/packageResources/release/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/recon_loading_spinner.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/recon_loading_spinner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/recon_loading_spinner.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/recon_loading_spinner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/recon_loading_spinner.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/recon_loading_spinner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/recon_loading_spinner.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/recon_loading_spinner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/recon_loading_spinner.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/recon_loading_spinner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/recon_loading_spinner.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/recon_loading_spinner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/recon_loading_spinner.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/recon_loading_spinner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/selectable_checkbox_disabled.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/selectable_checkbox_disabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/selectable_checkbox_disabled.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/selectable_checkbox_disabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/selectable_checkbox_disabled.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/selectable_checkbox_disabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/selectable_checkbox_disabled.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/selectable_checkbox_disabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/selectable_checkbox_disabled.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/selectable_checkbox_disabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/selectable_checkbox_disabled.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/selectable_checkbox_disabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/selectable_checkbox_disabled.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/selectable_checkbox_disabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/selectable_checkbox_enabled.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/selectable_checkbox_enabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/selectable_checkbox_enabled.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/selectable_checkbox_enabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/selectable_checkbox_enabled.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/selectable_checkbox_enabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/selectable_checkbox_enabled.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/selectable_checkbox_enabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/selectable_checkbox_enabled.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/selectable_checkbox_enabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/selectable_checkbox_enabled.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/selectable_checkbox_enabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/selectable_checkbox_enabled.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/selectable_checkbox_enabled.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/selectable_checkmark_hidden.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/selectable_checkmark_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/selectable_checkmark_hidden.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/selectable_checkmark_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/selectable_checkmark_hidden.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/selectable_checkmark_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/selectable_checkmark_hidden.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/selectable_checkmark_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/selectable_checkmark_hidden.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/selectable_checkmark_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/selectable_checkmark_hidden.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/selectable_checkmark_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/selectable_checkmark_hidden.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/selectable_checkmark_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/selectable_text_highlight_color.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/selectable_text_highlight_color.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/selectable_text_highlight_color.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/selectable_text_highlight_color.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/selectable_text_highlight_color.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/selectable_text_highlight_color.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/selectable_text_highlight_color.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/selectable_text_highlight_color.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/selectable_text_highlight_color.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/selectable_text_highlight_color.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/selectable_text_highlight_color.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/selectable_text_highlight_color.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/selectable_text_highlight_color.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/selectable_text_highlight_color.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/selectable_text_highlight_hidden.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/selectable_text_highlight_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/selectable_text_highlight_hidden.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/selectable_text_highlight_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/selectable_text_highlight_hidden.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/selectable_text_highlight_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/selectable_text_highlight_hidden.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/selectable_text_highlight_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/selectable_text_highlight_hidden.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/selectable_text_highlight_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/selectable_text_highlight_hidden.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/selectable_text_highlight_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/selectable_text_highlight_hidden.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/selectable_text_highlight_hidden.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/selectable_text_highlight_white.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/drawable/selectable_text_highlight_white.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/selectable_text_highlight_white.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/drawable/selectable_text_highlight_white.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/selectable_text_highlight_white.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/drawable/selectable_text_highlight_white.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/selectable_text_highlight_white.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/drawable/selectable_text_highlight_white.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/selectable_text_highlight_white.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/drawable/selectable_text_highlight_white.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/selectable_text_highlight_white.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/drawable/selectable_text_highlight_white.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/selectable_text_highlight_white.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/drawable/selectable_text_highlight_white.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/settings.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/slide_in_bottom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slide_in_bottom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/slide_in_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/slide_in_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/slide_in_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/slide_in_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/slide_in_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/slide_in_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/slide_in_top.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slide_in_top.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/slide_in_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/slide_in_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/slide_in_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/slide_in_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/slide_in_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/slide_in_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/slide_out_bottom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/slide_out_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slide_out_bottom.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slide_out_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/slide_out_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/slide_out_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/slide_out_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/slide_out_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/slide_out_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/slide_out_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/slide_out_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/slide_out_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/slide_out_bottom.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/slide_out_bottom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/slide_out_top.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/anim/slide_out_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slide_out_top.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slide_out_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/slide_out_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/anim/slide_out_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/slide_out_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/anim/slide_out_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/slide_out_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/anim/slide_out_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/slide_out_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/anim/slide_out_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/slide_out_top.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/anim/slide_out_top.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slidedown_in.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slidedown_in.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slidedown_out.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slidedown_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slideup_in.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slideup_in.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slideup_out.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/anim/slideup_out.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_22_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_22_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_19_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_19_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_22_2_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_22_2_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/toast.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/toast.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/values-v11/values-v11.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/values-v11/values-v11.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/values-v14/values-v14.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/values-v14/values-v14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/values-w820dp/values-w820dp.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/values-w820dp/values-w820dp.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/library/unspecified/res/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/library/unspecified/res/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/exploded-aar/MyWeather2.0/reconUI/unspecified/res/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/res/values/values.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/res/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/release/res/values/values.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/release/res/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/res/androidTest/debug/values/values.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/res/androidTest/debug/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/values/values.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/debug/res/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/values/values.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/bundles/release/res/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/values/values.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/androidTest/debug/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/values/values.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/debug/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/values/values.xml" afterPath="$PROJECT_DIR$/reconUI/build/intermediates/res/release/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MyWeather2.0.iws" />
@@ -405,8 +90,21 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/myweather/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7026379">
-              <caret line="578" column="28" selection-start-line="578" selection-start-column="28" selection-end-line="578" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.27642277">
+              <caret line="86" column="41" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -3217,13 +2915,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/myweather/DetailActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/settings.gradle" />
         <option value="$PROJECT_DIR$/reconUI/build.gradle" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/myweather/HoursActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/myweather/DaysActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/myweather/MainActivity.java" />
       </list>
     </option>
@@ -3239,10 +2937,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="3" />
-    <option name="y" value="3" />
-    <option name="width" value="1674" />
-    <option name="height" value="999" />
+    <option name="x" value="1" />
+    <option name="width" value="1671" />
+    <option name="height" value="1006" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -3267,6 +2964,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -3284,51 +2983,11 @@
               <option name="myItemId" value="MyWeather2.0" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reconUI" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyWeather2.0" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyWeather2.0" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyWeather2.0" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="myweather" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3550,28 +3209,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="3" width="1674" height="999" extended-state="0" />
+    <frame x="1" y="0" width="1671" height="1006" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858837" sideWeight="0.4951267" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282353" sideWeight="0.4951267" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3466762" sideWeight="0.45252225" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4400949" sideWeight="0.53180975" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.485172" sideWeight="0.4962963" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.133829" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3882353" sideWeight="0.53180975" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4847059" sideWeight="0.4962963" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12476723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3579,8 +3238,8 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937685" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29807004" sideWeight="0.5474777" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30664185" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29807004" sideWeight="0.5474777" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293623" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -3604,6 +3263,33 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/myweather/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/myweather/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/myweather/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3632,9 +3318,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3909,17 +3592,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="15" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/local.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3977,9 +3649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5116279">
           <caret line="96" column="73" selection-start-line="96" selection-start-column="73" selection-end-line="96" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3995,14 +3664,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8067797">
           <caret line="65" column="59" selection-start-line="65" selection-start-column="59" selection-end-line="65" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/myweather/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7026379">
-          <caret line="578" column="28" selection-start-line="578" selection-start-column="28" selection-end-line="578" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.27642277">
+          <caret line="86" column="41" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
           <folding />
         </state>
       </provider>
