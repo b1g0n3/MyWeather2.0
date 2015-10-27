@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridLayout
+        android:layout_width="428dp"
+        android:layout_height="240dp"></GridLayout>
+</LinearLayout><!-- From: file:/C:/Users/BL5849/git/MyWeather2.0/app/src/main/res/layout/activity_main2.xml -->
