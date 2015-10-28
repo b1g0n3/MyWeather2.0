@@ -78,8 +78,8 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 	HUDConnectivityManager mHUDConnectivityManager = null;
 	TextView mCurrentTemp;
     public boolean first;
-//	private TextView textView;
-	private TextView textcondition,temperature,textressentie;
+	private TextView status;
+	private TextView temperature,textressentie;
 	private ImageView iconimage;
 	public static String result;
 	private static ReconOSHttpClient client;
@@ -102,11 +102,11 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 		mHUDConnectivityManager = (HUDConnectivityManager) HUDOS.getHUDService(HUDOS.HUD_CONNECTIVITY_SERVICE);
 
 		TimeZone tz = TimeZone.getDefault();
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main2);
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy); 
-//		textView = (TextView) findViewById(R.id.status);
-		textcondition = (TextView) findViewById(R.id.condition);
+		status = (TextView) findViewById(R.id.status);
+//		textcondition = (TextView) findViewById(R.id.condition);
 		temperature = (TextView) findViewById(R.id.Temperature);
 		textressentie = (TextView) findViewById(R.id.textressentie);
     	iconimage = (ImageView) findViewById(R.id.icon);
@@ -271,8 +271,8 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
     	    String [] f  = currently.get().getFieldsArray();
 			String dir=headingToString2(Integer.valueOf(currently.get().getByKey("windBearing")));
     		temperature.setText(DoubleToI(currently.get().getByKey("temperature"))+"°");
-    		textressentie.setText(feel+" "+DoubleToI(currently.get().getByKey("apparentTemperature"))+"°");
-//    		textView.setText(statusline+currently.get().getByKey("time")+")");
+    		textressentie.setText("("+DoubleToI(currently.get().getByKey("apparentTemperature"))+"°)");
+    		status.setText(statusline+currently.get().getByKey("time")+")");
     		String substr=data.substring(data.indexOf("hourly\":{\"")+20);
     		substr=substr.substring(0, substr.indexOf("\""));
 //    		button_refresh.setVisibility(View.VISIBLE);
@@ -287,7 +287,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
     		out("nothing to display or bad json...");
     		out("data=" + data);
     		UpOption=false;
-//	        textView.setText("nothing to display...");
+	        status.setText("nothing to display...");
 //	        button_refresh.setVisibility(View.VISIBLE);
 	        refreshInProgress=false;
     	}
@@ -360,7 +360,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 			//latitude=36.752887; longitude=3.042048; //alger
 
 			out("Fetching data...");
-//		        textView.setText("Fetching data...");
+		        status.setText("Fetching data...");
 				if (unit.equals("F")) {
 					un = "us";
 				} else {
@@ -416,7 +416,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 					out("Response.sendWebRequest = 200");
 					return new String(response.getBody());
 				}else {
-//					textView.setText("(TimeOut)");
+//					status.setText("(TimeOut)");
 //					button_refresh.setVisibility(View.VISIBLE);
 					out("Response.sendWebRequest != 200");
 					refreshInProgress=false;
@@ -446,7 +446,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 				out("Data displayed...");
 			}
 			else {
-//				textView.setText("No Internet");
+				status.setText("No Internet");
 				onDisplay(PreviousResult);
 			}
 		}
@@ -497,7 +497,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 				out("city="+city);
 			}
 			else {
-//				textView.setText("No Internet");
+			status.setText("No Internet");
 			}
 		}
 
@@ -524,7 +524,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 		if(!hasNetworkAccess){
 			out("HUD not connected (onNetworkEvent)- No Internet");
 			Toast.makeText(MainActivity.this, "HUD not connected - No Internet", Toast.LENGTH_LONG).show();
-//			textView.setText("No Internet");
+			status.setText("No Internet");
 			statusline="HUD not connected - No Internet";
 			onDisplay(PreviousResult);
 		}
