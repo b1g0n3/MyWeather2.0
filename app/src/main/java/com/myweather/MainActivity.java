@@ -92,7 +92,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
     boolean UpOption,refreshInProgress,Mydebug;
 	private String feel,press,wind,humid,un,tend,city;
 	DialogBuilder builder;
-//	Button button_refresh;
+	Button button_refresh;
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -110,16 +110,17 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 		temperature = (TextView) findViewById(R.id.Temperature);
 		textressentie = (TextView) findViewById(R.id.textressentie);
     	iconimage = (ImageView) findViewById(R.id.icon);
-//	    button_refresh = (Button) findViewById(R.id.button_refresh);
-	    statusline="(last source : ";
+	    button_refresh = (Button) findViewById(R.id.button_refresh);
+	    statusline=""; city="";
 	    UpOption = false;
+
 	}
 
-	private void createPopupDialog() {
+/*	private void createPopupDialog() {
 		new DialogBuilder(this).setTitle("Warning").setSubtitle("Showing for 2 seconds").setWarningIcon().setDismissTimeout().createDialog().show();
 	}
-
-	private void createProgressDialog() {
+*/
+/*	private void createProgressDialog() {
 		new DialogBuilder(this).setTitle("Refresh").setSubtitle("(press select to finish)").showProgress().setOnKeyListener(new BaseDialog.OnKeyListener() {
 			@Override
 			public boolean onKey(BaseDialog dialog, int keyCode, KeyEvent event) {
@@ -135,7 +136,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 			}
 		}).createDialog().show();
 	}
-
+*/
 
 	@Override 
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -189,7 +190,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 	@Override
 	protected void onPause() {
 		mHUDConnectivityManager.unregister(this);
-		locationManager.removeUpdates(mylistener);
+//		locationManager.removeUpdates(mylistener);
 		SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = preferences.edit();
 		editor.putString("latitude", String.valueOf(oldLatitude) );
@@ -203,7 +204,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 	
     @Override
 	protected void onDestroy() {
-		locationManager.removeUpdates(mylistener);
+//		locationManager.removeUpdates(mylistener);
 		SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = preferences.edit();
 		editor.putString("latitude", String.valueOf(latitude) );
@@ -235,6 +236,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
     	toast.setView(layout);
     	toast.show();
     	onDisplay(PreviousResult);
+		doRefresh();
 		super.onResume();
     }
     
@@ -272,7 +274,8 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 			String dir=headingToString2(Integer.valueOf(currently.get().getByKey("windBearing")));
     		temperature.setText(DoubleToI(currently.get().getByKey("temperature"))+"°");
     		textressentie.setText("("+DoubleToI(currently.get().getByKey("apparentTemperature"))+"°)");
-    		status.setText(statusline+currently.get().getByKey("time")+")");
+			if (city !=null & city!="") { statusline=city; }
+    		status.setText(statusline);
     		String substr=data.substring(data.indexOf("hourly\":{\"")+20);
     		substr=substr.substring(0, substr.indexOf("\""));
 //    		button_refresh.setVisibility(View.VISIBLE);
@@ -301,9 +304,9 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 		result = "";
 		statusline = "";
 //		new DialogBuilder(this).setTitle("Refresh data").setSubtitle("(-)").showProgress().createDialog().show();
-		DialogBuilder builder = new DialogBuilder(this);
-		builder.setTitle("Refresh data").setSubtitle("(Please wait)").showProgress().setDismissTimeout(3);
-		builder.createDialog().show();
+//		DialogBuilder builder = new DialogBuilder(this);
+//		builder.setTitle("Refresh data").setSubtitle("(Please wait)").showProgress().setDismissTimeout(3);
+//		builder.createDialog().show();
 /*		BaseDialog dialog;
 		ImageView icon = (ImageView)dialog.getView().findViewById(R.id.icon);
 		icon.setImageResource(R.drawable.icon_checkmark);
@@ -351,8 +354,8 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 			//
 			//	remplacement de la localisation pour test
 			//
-			latitude=50.647392; longitude=3.130481; // my home
-			//latitude=45.092624; longitude=6.068348; // alpe d'huez
+			//latitude=50.647392; longitude=3.130481; // my home
+			latitude=45.092624; longitude=6.068348; // alpe d'huez
 			//latitude=45.125263; longitude=6.127609; // Pic Blanc
 			//latitude=41.919229; longitude=8.738635; //Ajaccio
 			//latitude=46.192683; longitude=48.205964; //Russie
@@ -424,8 +427,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 				}
 			} catch (Exception e) {
 				out("HUD not connected - No Internet");
-//				Toast.makeText(MainActivity.this, "HUD not connected - No Internet", Toast.LENGTH_LONG).show();
-				statusline="HUD not connected - No Internet";
+				statusline="No Internet";
 //				e.printStackTrace();
 			}
 			return null;
@@ -475,8 +477,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 				}
 			} catch (Exception e) {
 				out("HUD not connected - No Internet");
-//				Toast.makeText(MainActivity.this, "HUD not connected - No Internet", Toast.LENGTH_LONG).show();
-				statusline="HUD not connected - No Internet";
+				statusline="No Internet";
 //				e.printStackTrace();
 			}
 			return null;
@@ -495,6 +496,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 					e.printStackTrace();
 				}
 				out("city="+city);
+				status.setText(city);
 			}
 			else {
 			status.setText("No Internet");
@@ -521,11 +523,10 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 
 	@Override
 	public void onNetworkEvent(NetworkEvent networkEvent, boolean hasNetworkAccess) {
-		if(!hasNetworkAccess){
+		if(!hasNetworkAccess) {
 			out("HUD not connected (onNetworkEvent)- No Internet");
-			Toast.makeText(MainActivity.this, "HUD not connected - No Internet", Toast.LENGTH_LONG).show();
 			status.setText("No Internet");
-			statusline="HUD not connected - No Internet";
+			statusline="No Internet";
 			onDisplay(PreviousResult);
 		}
 	}

@@ -34,24 +34,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3cfeb20-08ce-441e-b079-ffd6e5e4801c" name="Default" comment="Build 2">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/DaysActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/DaysActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/DetailActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/DetailActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/HoursActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/HoursActivity.class" />
+      <change type="DELETED" beforePath="C:\Users\BL5849\git\MyWeather2.0\app\build\intermediates\classes\debug\com\myweather\MainActivity$2.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$MyLocationListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$MyLocationListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$WebRequestTask.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$WebRequestTask.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$WebRequestTask2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity$WebRequestTask2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/MainActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/reconinstruments/ui/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/reconinstruments/ui/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$layout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$menu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$raw.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$raw.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$string.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$style.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R$styleable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/SettingsActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/SettingsActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/WeatherAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/myweather/WeatherAdapter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
@@ -61,9 +49,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/resources/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/myweather/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/myweather/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/myweather/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/myweather/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/reconinstruments/ui/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/reconinstruments/ui/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/activity_main2.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/debug/layout/activity_main2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
@@ -98,21 +83,27 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/myweather/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08783784">
-              <caret line="457" column="17" selection-start-line="457" selection-start-column="17" selection-end-line="457" selection-end-column="17" />
-              <folding />
+            <state vertical-scroll-proportion="1.0557768">
+              <caret line="366" column="39" selection-start-line="366" selection-start-column="39" selection-end-line="366" selection-end-column="39" />
+              <folding>
+                <element signature="e#6171#6191#0" expanded="true" />
+                <element signature="e#6225#6236#0" expanded="true" />
+                <element signature="e#6276#6288#0" expanded="true" />
+                <element signature="e#6290#6555#0" expanded="true" />
+                <element signature="e#6554#6555#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider selected="true" editor-type-id="android-designer">
+          <provider editor-type-id="android-designer">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.7586207">
+              <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -120,12 +111,12 @@
       </file>
       <file leaf-file-name="activity_main2.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml">
-          <provider selected="true" editor-type-id="android-designer">
+          <provider editor-type-id="android-designer">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="93" column="42" selection-start-line="93" selection-start-column="42" selection-end-line="93" selection-end-column="42" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.862069">
+              <caret line="208" column="45" selection-start-line="208" selection-start-column="35" selection-end-line="208" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -2962,8 +2953,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -2989,6 +2980,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -3009,9 +3001,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3234,7 +3225,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3244,7 +3235,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3466762" sideWeight="0.45252225" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45684695" sideWeight="0.53180975" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42930153" sideWeight="0.53180975" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30664185" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4844649" sideWeight="0.4962963" order="2" side_tool="false" content_ui="tabs" />
@@ -3252,7 +3243,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12591687" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15582451" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -3292,7 +3283,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3300,7 +3297,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3308,7 +3311,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3316,7 +3325,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="306" column="0" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3331,7 +3346,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3339,7 +3360,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3358,7 +3385,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3377,7 +3410,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3396,7 +3435,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="87" column="53" selection-start-line="87" selection-start-column="53" selection-end-line="87" selection-end-column="53" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3415,7 +3460,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3434,7 +3485,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3453,7 +3510,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3472,7 +3535,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3499,7 +3568,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="104" column="43" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3530,7 +3605,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="104" column="44" selection-start-line="104" selection-start-column="44" selection-end-line="104" selection-end-column="44" />
-          <folding />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3678,33 +3759,39 @@
         <state theme-name="@style/AppBaseTheme" module-name="app" proportion="0.5" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.862069">
+          <caret line="208" column="45" selection-start-line="208" selection-start-column="35" selection-end-line="208" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main2.xml">
-      <provider selected="true" editor-type-id="android-designer">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="93" column="42" selection-start-line="93" selection-start-column="42" selection-end-line="93" selection-end-column="42" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7586207">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/myweather/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08783784">
-          <caret line="457" column="17" selection-start-line="457" selection-start-column="17" selection-end-line="457" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="1.0557768">
+          <caret line="366" column="39" selection-start-line="366" selection-start-column="39" selection-end-line="366" selection-end-column="39" />
+          <folding>
+            <element signature="e#6171#6191#0" expanded="true" />
+            <element signature="e#6225#6236#0" expanded="true" />
+            <element signature="e#6276#6288#0" expanded="true" />
+            <element signature="e#6290#6555#0" expanded="true" />
+            <element signature="e#6554#6555#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

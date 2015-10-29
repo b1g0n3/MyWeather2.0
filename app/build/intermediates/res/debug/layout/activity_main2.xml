@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="15dp"
     android:paddingTop="15dp"
@@ -203,5 +205,10 @@
         </RelativeLayout>
 
     </GridLayout>
+
+    <LinearLayout android:id="@+id/action_bar" style="@style/recon_button_action_bar">
+        <com.reconinstruments.ui.view.ButtonActionView style="@style/recon_button_action" auto:buttonType="select" auto:actionText="REFRESH"/>
+        <com.reconinstruments.ui.view.ButtonActionView style="@style/recon_button_action" auto:buttonType="back" auto:actionText="QUIT"/>
+    </LinearLayout>
 
 </LinearLayout><!-- From: file:/C:/Users/BL5849/git/MyWeather2.0/app/src/main/res/layout/activity_main2.xml -->
