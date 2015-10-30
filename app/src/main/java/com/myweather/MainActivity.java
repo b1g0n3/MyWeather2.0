@@ -89,7 +89,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
     public int testByte,pass;
     String language,unit,vitesse;
     String PreviousResult,temp,statusline;
-    boolean UpOption,refreshInProgress,Mydebug;
+    boolean UpOption,refreshInProgress,Mydebug, nointernet, nogps;
 	private String feel,press,wind,humid,un,tend,city;
 	DialogBuilder builder;
 	Button button_refresh;
@@ -113,40 +113,24 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 	    button_refresh = (Button) findViewById(R.id.button_refresh);
 	    statusline=""; city="";
 	    UpOption = false;
-
 	}
 
-/*	private void createPopupDialog() {
-		new DialogBuilder(this).setTitle("Warning").setSubtitle("Showing for 2 seconds").setWarningIcon().setDismissTimeout().createDialog().show();
-	}
-*/
-/*	private void createProgressDialog() {
-		new DialogBuilder(this).setTitle("Refresh").setSubtitle("(press select to finish)").showProgress().setOnKeyListener(new BaseDialog.OnKeyListener() {
-			@Override
-			public boolean onKey(BaseDialog dialog, int keyCode, KeyEvent event) {
-				if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_DPAD_CENTER) {
-					ImageView icon = (ImageView) dialog.getView().findViewById(R.id.icon);
-					icon.setImageResource(R.drawable.icon_checkmark);
-					icon.setVisibility(View.VISIBLE);
-					dialog.getView().findViewById(R.id.progress_bar).setVisibility(View.GONE);
-					dialog.setDismissTimeout(2);
-					return true;
-				}
-				return false;
-			}
-		}).createDialog().show();
-	}
-*/
-
-	@Override 
+	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		out("Keydown: (" + keyCode + ")");
 	    switch (keyCode) {
+
+            case KeyEvent.KEYCODE_DPAD_CENTER :
+            {
+                doRefresh();
+                return true;
+            }
+
 	        case KeyEvent.KEYCODE_DPAD_DOWN :
 	        {
 	        	startActivity(new Intent(MainActivity.this, SettingsActivity.class));
 	        	overridePendingTransition(R.anim.slideup_in, R.anim.slideup_out);
-	        	break;
+                return true;
 	        }
 
 	        case KeyEvent.KEYCODE_DPAD_UP :
@@ -155,33 +139,13 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 	        	startActivity(new Intent(MainActivity.this, HoursActivity.class));
 	        	overridePendingTransition(R.anim.slidedown_in, R.anim.slidedown_out);
 	        	}
-	        	break;
+                return true;
 	        }
 
-	        case KeyEvent.KEYCODE_DPAD_CENTER :
-	        {
-	        	if (!refreshInProgress) {
-//		        	button_refresh.setVisibility(View.INVISIBLE);
-		        	refreshInProgress=true;
-		        	doRefresh();
-	        	}
-	        	break;
-	        }
 	        case KeyEvent.KEYCODE_BACK :
 	        {
-    	        new AlertDialog.Builder(this)
-    	        .setIcon(android.R.drawable.ic_dialog_alert)
-    	        .setMessage(R.string.really_quit)
-    	        .setPositiveButton(R.string.no, null)
-    	        .setNegativeButton(R.string.yes, new DialogInterface.OnClickListener() {
-    	            @Override
-    	            public void onClick(DialogInterface dialog, int which) {
-    	                //Stop the activity
-    	            	MainActivity.this.finish();    
-    	            }
-    	        })
-    	        .show();
-	        	break;
+                out("Bye Bye...");
+                return true;
 	        }
 	    }
 	    return super.onKeyDown(keyCode, event);
@@ -241,6 +205,9 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
     }
     
     private void onDisplay(String data) {
+		if (nointernet ) { statusline ="No Internet access";}
+		if (nogps ) { statusline ="No Gps signal";}
+		if (nointernet & nogps) { statusline = "no gps and no Internet"; }
     	if (data !=null & data!="") {
     		UpOption=true;
     		ForecastIO fio = new ForecastIO(key);
@@ -301,39 +268,20 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 
 	private void doRefresh() {
 		out("doRefresh()");
+		status.setText("Refreshing...");
 		result = "";
-		statusline = "";
-//		new DialogBuilder(this).setTitle("Refresh data").setSubtitle("(-)").showProgress().createDialog().show();
-//		DialogBuilder builder = new DialogBuilder(this);
-//		builder.setTitle("Refresh data").setSubtitle("(Please wait)").showProgress().setDismissTimeout(3);
-//		builder.createDialog().show();
-/*		BaseDialog dialog;
-		ImageView icon = (ImageView)dialog.getView().findViewById(R.id.icon);
-		icon.setImageResource(R.drawable.icon_checkmark);
-		icon.setVisibility(View.VISIBLE);
-		dialog.getView().findViewById(R.id.progress_bar).setVisibility(View.GONE);
-		dialog.setDismissTimeout(2);
-*/
-//		builder.setDismissTimeout(5);
-//		Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
+		statusline = ""; nointernet=false; nogps=false;city="";
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-		// Define the criteria how to select the location provider
+
 		criteria = new Criteria();
 		criteria.setAccuracy(Criteria.ACCURACY_COARSE);   //default
-
-		// user defines the criteria
-
 		criteria.setCostAllowed(false);
-		// get the best provider depending on the criteria
 		provider = locationManager.getBestProvider(criteria, false);
-		// the last known location of this provider
 		Location location = locationManager.getLastKnownLocation(provider);
-
 		mylistener = new MyLocationListener();
 
 		if (location != null) {
 			mylistener.onLocationChanged(location);
-
 			// location updates: at least 1 meter and 200millsecs change
 			locationManager.requestLocationUpdates(provider, 2000, 100, mylistener);
 			String a = "" + location.getLatitude();
@@ -347,6 +295,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 //			statusline="(last refresh:";
 			} else {
 				out("no Lat trouve:");
+				nogps=true;
 				statusline = "No GPS. Previous location used";
 				latitude = oldLatitude;
 				longitude = oldLongitude;
@@ -355,7 +304,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 			//	remplacement de la localisation pour test
 			//
 			//latitude=50.647392; longitude=3.130481; // my home
-			latitude=45.092624; longitude=6.068348; // alpe d'huez
+			//latitude=45.092624; longitude=6.068348; // alpe d'huez
 			//latitude=45.125263; longitude=6.127609; // Pic Blanc
 			//latitude=41.919229; longitude=8.738635; //Ajaccio
 			//latitude=46.192683; longitude=48.205964; //Russie
@@ -363,8 +312,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 			//latitude=36.752887; longitude=3.042048; //alger
 
 			out("Fetching data...");
-		        status.setText("Fetching data...");
-				if (unit.equals("F")) {
+		        if (unit.equals("F")) {
 					un = "us";
 				} else {
 					un = "ca";
@@ -384,12 +332,8 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 			}
 		} else {
 			out("No GPS found");
-			Toast.makeText(this, "No GPS found", Toast.LENGTH_SHORT).show();
-//			button_refresh.setVisibility(View.VISIBLE);
+			nogps=true;
 			refreshInProgress = false;
-			// leads to the settings because there is no last known location
-			//Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-			//startActivity(intent);
 		}
 	}
 
@@ -419,16 +363,13 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 					out("Response.sendWebRequest = 200");
 					return new String(response.getBody());
 				}else {
-//					status.setText("(TimeOut)");
-//					button_refresh.setVisibility(View.VISIBLE);
 					out("Response.sendWebRequest != 200");
 					refreshInProgress=false;
 					out("Error: " + response.getResponseMessage());
 				}
 			} catch (Exception e) {
 				out("HUD not connected - No Internet");
-				statusline="No Internet";
-//				e.printStackTrace();
+				nointernet=true;
 			}
 			return null;
 		}
@@ -436,7 +377,6 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 		@Override
 		protected void onPostExecute(String result) {
 			if (result != null) {
-//				textView.setText("Data received...");
 				PreviousResult=result;
 				SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
 				SharedPreferences.Editor editor = preferences.edit();
@@ -448,11 +388,10 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 				out("Data displayed...");
 			}
 			else {
-				status.setText("No Internet");
+				nointernet=true;
 				onDisplay(PreviousResult);
 			}
 		}
-
 	}
 
 	private class WebRequestTask2 extends AsyncTask<URL, Void, String> {
@@ -469,16 +408,13 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 					out("Response.sendWebRequest = 200");
 					return new String(response.getBody());
 				}else {
-//					textView.setText("(TimeOut)");
-//					button_refresh.setVisibility(View.VISIBLE);
 					out("Response.sendWebRequest != 200");
 					refreshInProgress=false;
 					out("Error: " + response.getResponseMessage());
 				}
 			} catch (Exception e) {
 				out("HUD not connected - No Internet");
-				statusline="No Internet";
-//				e.printStackTrace();
+				nointernet =true;
 			}
 			return null;
 		}
@@ -490,19 +426,18 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 				JSONObject jsonObject = new JSONObject();
 				try {
 					jsonObject = new JSONObject(result);
-					city = ((JSONArray)jsonObject.get("results")).getJSONObject(0).getJSONArray("address_components").getJSONObject(2).getString("short_name");
-					city=city+"("+((JSONArray)jsonObject.get("results")).getJSONObject(0).getJSONArray("address_components").getJSONObject(5).getString("short_name")+")";
+					int i=0;
+					while (!((JSONArray)jsonObject.get("results")).getJSONObject(1).getJSONArray("address_components").getJSONObject(i).getJSONArray("types").getString(0).equals("locality")) {
+						i += 1;
+					}
+					city = "near "+((JSONArray)jsonObject.get("results")).getJSONObject(1).getJSONArray("address_components").getJSONObject(i).getString("short_name");
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
 				out("city="+city);
 				status.setText(city);
 			}
-			else {
-			status.setText("No Internet");
-			}
 		}
-
 	}
 
 	public static String headingToString2(double x)
@@ -525,8 +460,7 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 	public void onNetworkEvent(NetworkEvent networkEvent, boolean hasNetworkAccess) {
 		if(!hasNetworkAccess) {
 			out("HUD not connected (onNetworkEvent)- No Internet");
-			status.setText("No Internet");
-			statusline="No Internet";
+			nointernet=true;
 			onDisplay(PreviousResult);
 		}
 	}
@@ -578,5 +512,4 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 //					Toast.LENGTH_SHORT).show();
 		}
 	}
-
 }
