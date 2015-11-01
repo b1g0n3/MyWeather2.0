@@ -51,6 +51,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
 import android.provider.Settings;
+import android.view.DragEvent;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -66,7 +67,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 //public class MainActivity extends Activity implements IHUDConnectivity {
-public class MainActivity extends SimpleListActivity implements IHUDConnectivity {
+public class MainActivity extends Activity implements IHUDConnectivity {
 //public class MainActivity extends Activity implements IReconDataReceiver, IHUDConnectivity {
 
 	private LocationManager locationManager;
@@ -91,16 +92,14 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
     String PreviousResult,temp,statusline;
     boolean UpOption,refreshInProgress,Mydebug, nointernet, nogps;
 	private String feel,press,wind,humid,un,tend,city;
-	DialogBuilder builder;
+//	DialogBuilder builder;
 	Button button_refresh;
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		System.load("/system/lib/libreconinstruments_jni.so");
 		mHUDConnectivityManager = (HUDConnectivityManager) HUDOS.getHUDService(HUDOS.HUD_CONNECTIVITY_SERVICE);
-
 		TimeZone tz = TimeZone.getDefault();
 		setContentView(R.layout.activity_main2);
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -116,23 +115,20 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 	}
 
 	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	public boolean onKeyUp(int keyCode, KeyEvent event) {
 		out("Keydown: (" + keyCode + ")");
 	    switch (keyCode) {
-
             case KeyEvent.KEYCODE_DPAD_CENTER :
             {
                 doRefresh();
                 return true;
             }
-
 	        case KeyEvent.KEYCODE_DPAD_DOWN :
 	        {
 	        	startActivity(new Intent(MainActivity.this, SettingsActivity.class));
 	        	overridePendingTransition(R.anim.slideup_in, R.anim.slideup_out);
                 return true;
 	        }
-
 	        case KeyEvent.KEYCODE_DPAD_UP :
 	        {
 	        	if (UpOption) {
@@ -141,14 +137,14 @@ public class MainActivity extends SimpleListActivity implements IHUDConnectivity
 	        	}
                 return true;
 	        }
-
 	        case KeyEvent.KEYCODE_BACK :
 	        {
                 out("Bye Bye...");
-                return true;
+				MainActivity.this.finish();
+				break;
 	        }
 	    }
-	    return super.onKeyDown(keyCode, event);
+	    return super.onKeyUp(keyCode, event);
 	}
 
 	@Override

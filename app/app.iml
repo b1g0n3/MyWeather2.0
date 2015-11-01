@@ -95,5 +95,7 @@
     <orderEntry type="library" exported="" name="recon_sdk_2.0.1" level="project" />
     <orderEntry type="module" module-name="reconUI" exported="" />
     <orderEntry type="module" module-name="library" exported="" />
+    <orderEntry type="library" exported="" name="android-Recon Instruments:Recon Instruments SDK Add-On:16" level="project" />
+    <orderEntry type="library" exported="" name="com.reconinstruments.os-Recon Instruments:Recon Instruments SDK Add-On:16" level="project" />
   </component>
 </module>
