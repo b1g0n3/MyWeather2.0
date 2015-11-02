@@ -9,7 +9,9 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -80,8 +82,8 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 	TextView mCurrentTemp;
     public boolean first;
 	private TextView status;
-	private TextView temperature,textressentie;
-	private ImageView iconimage;
+	private TextView temperature,textressentie,temperature1,temperature2;
+	private ImageView iconimage,iconimage1,iconimage2;
 	public static String result;
 	private static ReconOSHttpClient client;
 	public double latitude,oldLatitude;
@@ -89,9 +91,9 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 	static String key = "28faca837266a521f823ab10d1a45050";
     public int testByte,pass;
     String language,unit,vitesse;
-    String PreviousResult,temp,statusline;
+    String icon,PreviousResult,temp,statusline;
     boolean UpOption,refreshInProgress,Mydebug, nointernet, nogps;
-	private String feel,press,wind,humid,un,tend,city;
+	private String feel,press,wind,humid,un,tend,city,time;
 //	DialogBuilder builder;
 	Button button_refresh;
     
@@ -107,8 +109,12 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		status = (TextView) findViewById(R.id.status);
 //		textcondition = (TextView) findViewById(R.id.condition);
 		temperature = (TextView) findViewById(R.id.Temperature);
+		temperature1 = (TextView) findViewById(R.id.Temperature1);
+		temperature2 = (TextView) findViewById(R.id.Temperature2);
 		textressentie = (TextView) findViewById(R.id.textressentie);
     	iconimage = (ImageView) findViewById(R.id.icon);
+		iconimage1 = (ImageView) findViewById(R.id.icon1);
+		iconimage2 = (ImageView) findViewById(R.id.icon2);
 	    button_refresh = (Button) findViewById(R.id.button_refresh);
 	    statusline=""; city="";
 	    UpOption = false;
@@ -204,12 +210,13 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		if (nointernet ) { statusline ="No Internet access";}
 		if (nogps ) { statusline ="No Gps signal";}
 		if (nointernet & nogps) { statusline = "no gps and no Internet"; }
-    	if (data !=null & data!="") {
+		Date date; double date1=0;
+		if (data !=null & data!="") {
     		UpOption=true;
     		ForecastIO fio = new ForecastIO(key);
     		fio.getForecast(data);
     		FIOCurrently currently = new FIOCurrently(fio);
-    		new FIOHourly(fio);
+//    		new FIOHourly(fio);
     		String icon =  currently.get().getByKey("icon").replace("\"", "");
     		String icon1 = "@drawable/"+icon.replace("-", "_");
     		Resources res = getResources();
@@ -232,18 +239,32 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     			vitesse = "km";
     			tend=getString(R.string.tend_fr);
     		}
-
     	    String [] f  = currently.get().getFieldsArray();
 			String dir=headingToString2(Integer.valueOf(currently.get().getByKey("windBearing")));
     		temperature.setText(DoubleToI(currently.get().getByKey("temperature"))+"°");
     		textressentie.setText("("+DoubleToI(currently.get().getByKey("apparentTemperature"))+"°)");
+
+			out("Next 1h");
+			FIOHourly hourly = new FIOHourly(fio);
+			Date date2 = new Date((long) (date1*1000));
+			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+			sdf.setTimeZone(TimeZone.getDefault());
+			time = sdf.format(date2);
+			icon =  hourly.getHour(2).icon().replace("\"", "");
+			icon1 = "@drawable/"+icon.replace("-", "_");
+//			Resources res = getResources();
+			int iconx = res.getIdentifier(icon1, "drawable", getPackageName() );
+			temperature1 = DoubleToI(hourly.getHour(2).getByKey("temperature"))+"°";
+			String dir=headingToString2(Integer.valueOf(hourly.getHour(i).getByKey("windBearing")));
+			wind = DoubleToI(hourly.getHour(2).getByKey("windSpeed"))+" "+vitesse;//+"\n"+dir;
+			weather_data[2] = new Weather(time,icon,temperature,wind,dir);
+			out("Next 2h");
+
 			if (city !=null & city!="") { statusline=city; }
     		status.setText(statusline);
     		String substr=data.substring(data.indexOf("hourly\":{\"")+20);
     		substr=substr.substring(0, substr.indexOf("\""));
-//    		button_refresh.setVisibility(View.VISIBLE);
 			refreshInProgress=false;
-
     	} else {
     		String icon1 = "@drawable/unknown";
     		Resources res = getResources();
@@ -275,7 +296,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		provider = locationManager.getBestProvider(criteria, false);
 		Location location = locationManager.getLastKnownLocation(provider);
 		mylistener = new MyLocationListener();
-
+		out("Get Location ");
 		if (location != null) {
 			mylistener.onLocationChanged(location);
 			// location updates: at least 1 meter and 200millsecs change
@@ -328,6 +349,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			}
 		} else {
 			out("No GPS found");
+			status.setText("No Gps signal");
 			nogps=true;
 			refreshInProgress = false;
 		}
