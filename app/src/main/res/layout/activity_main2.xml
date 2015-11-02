@@ -70,16 +70,30 @@
                             android:textStyle="bold"
                             android:textIsSelectable="true" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="(10)"
-                            android:id="@+id/textressentie"
-                            style="@style/recon_jet_text_primary"
-                            android:gravity="center_vertical|center_horizontal"
-                            android:textSize="22dp"
-                            android:layout_gravity="center_horizontal" />
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="Feels like "
+                                android:id="@+id/textView5"
+                                android:textSize="12dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:text="10°"
+                                android:id="@+id/textressentie"
+                                style="@style/recon_jet_text_primary"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:textSize="20dp" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                     <ImageView

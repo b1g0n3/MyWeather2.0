@@ -137,10 +137,10 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 	        }
 	        case KeyEvent.KEYCODE_DPAD_UP :
 	        {
-	        	if (UpOption) {
+//	        	if (UpOption) {
 	        	startActivity(new Intent(MainActivity.this, HoursActivity.class));
 	        	overridePendingTransition(R.anim.slidedown_in, R.anim.slidedown_out);
-	        	}
+//	        	}
                 return true;
 	        }
 	        case KeyEvent.KEYCODE_BACK :
@@ -212,16 +212,15 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		if (nointernet & nogps) { statusline = "no gps and no Internet"; }
 		Date date; double date1=0;
 		if (data !=null & data!="") {
+			out("Displaying Current data");
     		UpOption=true;
     		ForecastIO fio = new ForecastIO(key);
     		fio.getForecast(data);
     		FIOCurrently currently = new FIOCurrently(fio);
-//    		new FIOHourly(fio);
     		String icon =  currently.get().getByKey("icon").replace("\"", "");
     		String icon1 = "@drawable/"+icon.replace("-", "_");
     		Resources res = getResources();
-    		int resourceId = res.getIdentifier(
-    		   icon1, "drawable", getPackageName() );
+    		int resourceId = res.getIdentifier(icon1, "drawable", getPackageName() );
     		iconimage.setImageResource( resourceId );
     		setTitle("MyWeather : currently");
     		if (language.equals("en")) {
@@ -242,24 +241,25 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     	    String [] f  = currently.get().getFieldsArray();
 			String dir=headingToString2(Integer.valueOf(currently.get().getByKey("windBearing")));
     		temperature.setText(DoubleToI(currently.get().getByKey("temperature"))+"°");
-    		textressentie.setText("("+DoubleToI(currently.get().getByKey("apparentTemperature"))+"°)");
+    		textressentie.setText(DoubleToI(currently.get().getByKey("apparentTemperature"))+"°");
 
-			out("Next 1h");
+			out("Displaying Next 1h");
 			FIOHourly hourly = new FIOHourly(fio);
-			Date date2 = new Date((long) (date1*1000));
-			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
-			sdf.setTimeZone(TimeZone.getDefault());
-			time = sdf.format(date2);
-			icon =  hourly.getHour(2).icon().replace("\"", "");
-			icon1 = "@drawable/"+icon.replace("-", "_");
-//			Resources res = getResources();
-			int iconx = res.getIdentifier(icon1, "drawable", getPackageName() );
-			temperature1 = DoubleToI(hourly.getHour(2).getByKey("temperature"))+"°";
-			String dir=headingToString2(Integer.valueOf(hourly.getHour(i).getByKey("windBearing")));
-			wind = DoubleToI(hourly.getHour(2).getByKey("windSpeed"))+" "+vitesse;//+"\n"+dir;
-			weather_data[2] = new Weather(time,icon,temperature,wind,dir);
-			out("Next 2h");
-
+			Date date2 = new Date();
+			SimpleDateFormat sdfm = new SimpleDateFormat("mm");
+			sdfm.setTimeZone(TimeZone.getDefault());
+			int next=1;
+			if (Integer.valueOf(sdfm.format(date2))>29) { next=2; }
+			icon = "@drawable/"+hourly.getHour(next).icon().replace("\"", "").replace("-", "_");
+			resourceId = res.getIdentifier(icon, "drawable", getPackageName() );
+			iconimage1.setImageResource(resourceId);
+			temperature1.setText(DoubleToI(hourly.getHour(next).getByKey("temperature")) + "°");
+			out("Displaying Next 2h");
+			icon = "@drawable/"+hourly.getHour(next+1).icon().replace("\"", "").replace("-", "_");
+			resourceId = res.getIdentifier(icon, "drawable", getPackageName());
+			iconimage2.setImageResource( resourceId );
+			temperature2.setText(DoubleToI(hourly.getHour(next+1).getByKey("temperature")) + "°");
+			out("Displaying city");
 			if (city !=null & city!="") { statusline=city; }
     		status.setText(statusline);
     		String substr=data.substring(data.indexOf("hourly\":{\"")+20);
@@ -268,14 +268,12 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     	} else {
     		String icon1 = "@drawable/unknown";
     		Resources res = getResources();
-    		int resourceId = res.getIdentifier(
-    		   icon1, "drawable", getPackageName() );
+    		int resourceId = res.getIdentifier(icon1, "drawable", getPackageName() );
     		iconimage.setImageResource(resourceId);
     		out("nothing to display or bad json...");
     		out("data=" + data);
     		UpOption=false;
 	        status.setText("nothing to display...");
-//	        button_refresh.setVisibility(View.VISIBLE);
 	        refreshInProgress=false;
     	}
     }
@@ -321,7 +319,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			//	remplacement de la localisation pour test
 			//
 			//latitude=50.647392; longitude=3.130481; // my home
-			//latitude=45.092624; longitude=6.068348; // alpe d'huez
+			latitude=45.092624; longitude=6.068348; // alpe d'huez
 			//latitude=45.125263; longitude=6.127609; // Pic Blanc
 			//latitude=41.919229; longitude=8.738635; //Ajaccio
 			//latitude=46.192683; longitude=48.205964; //Russie
