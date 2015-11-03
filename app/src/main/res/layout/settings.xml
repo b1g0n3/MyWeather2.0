@@ -78,7 +78,8 @@
             android:layout_height="fill_parent"
             android:gravity="center"
             android:text="Change will be effective after next Refresh"
-            android:textColor="@color/write" />
+            android:textColor="@color/write"
+            android:textSize="12dp" />
 
     </LinearLayout>
 
@@ -100,13 +101,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
-            android:text="MyWeather 1.0" />
+            android:text="MyWeather 1.0"
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="contact/support:longin.francois@gmail.com" />
+            android:text="contact/support:longin.francois@gmail.com"
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/textView2"

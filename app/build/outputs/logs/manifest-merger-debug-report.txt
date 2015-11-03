@@ -91,29 +91,41 @@ ADDED from AndroidManifest.xml:35:9
 		ADDED from AndroidManifest.xml:37:13
 	android:name
 		ADDED from AndroidManifest.xml:36:13
-activity#com.myweather.DetailActivity
+activity#com.myweather.Settings2Activity
 ADDED from AndroidManifest.xml:39:9
 	android:label
 		ADDED from AndroidManifest.xml:41:13
 	android:name
 		ADDED from AndroidManifest.xml:40:13
-activity#com.myweather.HoursActivity
+activity#com.myweather.AboutActivity
 ADDED from AndroidManifest.xml:43:9
 	android:label
 		ADDED from AndroidManifest.xml:45:13
 	android:name
 		ADDED from AndroidManifest.xml:44:13
-activity#com.myweather.DaysActivity
-ADDED from AndroidManifest.xml:47:9
+activity#com.myweather.DetailActivity
+ADDED from AndroidManifest.xml:48:9
 	android:label
+		ADDED from AndroidManifest.xml:50:13
+	android:name
 		ADDED from AndroidManifest.xml:49:13
-	android:name
-		ADDED from AndroidManifest.xml:48:13
-uses-library#com.reconinstruments.os
-ADDED from AndroidManifest.xml:51:11
-	android:name
-		ADDED from AndroidManifest.xml:51:25
-uses-library#com.reconinstruments.lib
+activity#com.myweather.HoursActivity
 ADDED from AndroidManifest.xml:52:9
+	android:label
+		ADDED from AndroidManifest.xml:54:13
 	android:name
-		ADDED from AndroidManifest.xml:52:23
+		ADDED from AndroidManifest.xml:53:13
+activity#com.myweather.DaysActivity
+ADDED from AndroidManifest.xml:56:9
+	android:label
+		ADDED from AndroidManifest.xml:58:13
+	android:name
+		ADDED from AndroidManifest.xml:57:13
+uses-library#com.reconinstruments.os
+ADDED from AndroidManifest.xml:60:11
+	android:name
+		ADDED from AndroidManifest.xml:60:25
+uses-library#com.reconinstruments.lib
+ADDED from AndroidManifest.xml:61:9
+	android:name
+		ADDED from AndroidManifest.xml:61:23

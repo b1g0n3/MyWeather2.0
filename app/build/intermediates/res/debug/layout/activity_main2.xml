@@ -61,7 +61,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="10"
                             android:id="@+id/Temperature"
                             android:layout_gravity="center_horizontal"
                             style="@style/recon_jet_text_primary"
@@ -79,7 +78,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
-                                android:text="Feels like "
                                 android:id="@+id/textView5"
                                 android:textSize="12dp" />
 
@@ -87,7 +85,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:text="10°"
                                 android:id="@+id/textressentie"
                                 style="@style/recon_jet_text_primary"
                                 android:gravity="center_vertical|center_horizontal"
@@ -101,7 +98,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="fill_parent"
                         android:layout_gravity="center"
-                        android:src="@drawable/partly_cloudy_day"
+                        android:src="@drawable/unknown"
                         android:foregroundGravity="center_vertical|center_horizontal" />
                 </LinearLayout>
 
@@ -159,7 +156,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="10"
                         android:id="@+id/Temperature1"
                         android:layout_gravity="center"
                         style="@style/recon_jet_text_primary"
@@ -170,7 +166,7 @@
                         android:id="@+id/icon1"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/partly_cloudy_day"
+                        android:src="@drawable/unknown"
                         android:layout_gravity="right"
                         android:foregroundGravity="right" />
                 </LinearLayout>
@@ -203,7 +199,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="10"
                         android:id="@+id/Temperature2"
                         android:layout_gravity="center"
                         style="@style/recon_jet_text_primary"
@@ -214,7 +209,7 @@
                         android:id="@+id/icon2"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/partly_cloudy_day"
+                        android:src="@drawable/unknown"
                         android:foregroundGravity="right" />
                 </LinearLayout>
 
@@ -225,4 +220,4 @@
     </GridLayout>
 
 
-</LinearLayout><!-- From: file:/C:/Users/B1g0n3/git/MyWeather2.0/app/src/main/res/layout/activity_main2.xml -->
+</LinearLayout><!-- From: file:/C:/Users/BL5849/git/MyWeather2.0/app/src/main/res/layout/activity_main2.xml -->

@@ -1,32 +1,21 @@
 package com.myweather;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
 import java.util.TimeZone;
 
 import com.github.dvdme.ForecastIOLib.FIOCurrently;
 import com.github.dvdme.ForecastIOLib.FIOHourly;
 import com.github.dvdme.ForecastIOLib.ForecastIO;
-import com.reconinstruments.ReconSDK.*;
 import com.reconinstruments.os.HUDOS;
-import com.reconinstruments.ui.*;
 
-import com.reconinstruments.ui.dialog.BaseDialog;
-import com.reconinstruments.ui.dialog.DialogBuilder;
-import com.reconinstruments.ui.list.SimpleListActivity;
 import com.reconinstruments.webapi.ReconOSHttpClient;
 
 import com.reconinstruments.os.connectivity.HUDConnectivityManager;
@@ -36,15 +25,11 @@ import com.reconinstruments.os.connectivity.http.HUDHttpRequest.RequestMethod;
 import com.reconinstruments.os.connectivity.http.HUDHttpResponse;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.location.Address;
 import android.location.Criteria;
-import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -52,18 +37,13 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
-import android.provider.Settings;
-import android.view.DragEvent;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -79,23 +59,26 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 
 
 	HUDConnectivityManager mHUDConnectivityManager = null;
-	TextView mCurrentTemp;
+//	TextView mCurrentTemp;
     public boolean first;
 	private TextView status;
-	private TextView temperature,textressentie,temperature1,temperature2;
+	private TextView temperature,textressentie,temperature1,temperature2,textView5;
 	private ImageView iconimage,iconimage1,iconimage2;
 	public static String result;
 	private static ReconOSHttpClient client;
 	public double latitude,oldLatitude;
 	public double longitude,oldLongitude;
 	static String key = "28faca837266a521f823ab10d1a45050";
-    public int testByte,pass;
+//    public int testByte,pass;
     String language,unit,vitesse;
     String icon,PreviousResult,temp,statusline;
-    boolean UpOption,refreshInProgress,Mydebug, nointernet, nogps;
-	private String feel,press,wind,humid,un,tend,city,time;
+//    boolean UpOption;
+//	boolean refreshInProgress;
+	boolean Mydebug, nointernet, nogps;
+	private String un,city;
+	private String feel,press,wind,humid,tend,time;
 //	DialogBuilder builder;
-	Button button_refresh;
+//	Button button_refresh;
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -112,12 +95,13 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		temperature1 = (TextView) findViewById(R.id.Temperature1);
 		temperature2 = (TextView) findViewById(R.id.Temperature2);
 		textressentie = (TextView) findViewById(R.id.textressentie);
+		textView5 = (TextView) findViewById(R.id.textView5);
     	iconimage = (ImageView) findViewById(R.id.icon);
 		iconimage1 = (ImageView) findViewById(R.id.icon1);
 		iconimage2 = (ImageView) findViewById(R.id.icon2);
-	    button_refresh = (Button) findViewById(R.id.button_refresh);
+//	    button_refresh = (Button) findViewById(R.id.button_refresh);
 	    statusline=""; city="";
-	    UpOption = false;
+//	    UpOption = false;
 	}
 
 	@Override
@@ -131,7 +115,8 @@ public class MainActivity extends Activity implements IHUDConnectivity {
             }
 	        case KeyEvent.KEYCODE_DPAD_DOWN :
 	        {
-	        	startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+				startActivity(new Intent(MainActivity.this, AboutActivity.class));
+//	        	startActivity(new Intent(MainActivity.this, SettingsActivity.class));
 	        	overridePendingTransition(R.anim.slideup_in, R.anim.slideup_out);
                 return true;
 	        }
@@ -156,7 +141,6 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 	@Override
 	protected void onPause() {
 		mHUDConnectivityManager.unregister(this);
-//		locationManager.removeUpdates(mylistener);
 		SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = preferences.edit();
 		editor.putString("latitude", String.valueOf(oldLatitude) );
@@ -170,7 +154,6 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 	
     @Override
 	protected void onDestroy() {
-//		locationManager.removeUpdates(mylistener);
 		SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = preferences.edit();
 		editor.putString("latitude", String.valueOf(latitude) );
@@ -196,12 +179,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     	View layout = inflater.inflate(R.layout.toast,(ViewGroup) findViewById(R.id.toast_layout_root));
     	ImageView image = (ImageView) layout.findViewById(R.id.image);
     	image.setImageResource(R.drawable.scroll2);
-    	Toast toast = new Toast(getApplicationContext());
-    	toast.setGravity(Gravity.RIGHT, 0, 0);
-    	toast.setDuration(Toast.LENGTH_SHORT);
-    	toast.setView(layout);
-    	toast.show();
-    	onDisplay(PreviousResult);
+//    	onDisplay(PreviousResult);
 		doRefresh();
 		super.onResume();
     }
@@ -213,7 +191,6 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		Date date; double date1=0;
 		if (data !=null & data!="") {
 			out("Displaying Current data");
-    		UpOption=true;
     		ForecastIO fio = new ForecastIO(key);
     		fio.getForecast(data);
     		FIOCurrently currently = new FIOCurrently(fio);
@@ -223,14 +200,14 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     		int resourceId = res.getIdentifier(icon1, "drawable", getPackageName() );
     		iconimage.setImageResource( resourceId );
     		setTitle("MyWeather : currently");
-    		if (language.equals("en")) {
-    			feel = getString(R.string.feellike_en);
-    			press = getString(R.string.pressure_en);
-    			wind = getString(R.string.wind_en);
-    			humid = getString(R.string.humid_en);
-    			vitesse = "mi";
-    			tend=getString(R.string.tend_en);
-    		} else {
+//    		if (language.equals("en")) {
+    		feel = getString(R.string.feellike_en);
+    		press = getString(R.string.pressure_en);
+    		wind = getString(R.string.wind_en);
+    		humid = getString(R.string.humid_en);
+    		vitesse = "mi";
+    		tend=getString(R.string.tend_en);
+/*    		} else {
     			feel = getString(R.string.feellike_fr);
     			press = getString(R.string.pressure_fr);
     			wind = getString(R.string.wind_fr);
@@ -238,11 +215,11 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     			vitesse = "km";
     			tend=getString(R.string.tend_fr);
     		}
-    	    String [] f  = currently.get().getFieldsArray();
+*/    	    String [] f  = currently.get().getFieldsArray();
 			String dir=headingToString2(Integer.valueOf(currently.get().getByKey("windBearing")));
     		temperature.setText(DoubleToI(currently.get().getByKey("temperature"))+"°");
     		textressentie.setText(DoubleToI(currently.get().getByKey("apparentTemperature"))+"°");
-
+			textView5.setText("Feels like ");
 			out("Displaying Next 1h");
 			FIOHourly hourly = new FIOHourly(fio);
 			Date date2 = new Date();
@@ -264,17 +241,15 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     		status.setText(statusline);
     		String substr=data.substring(data.indexOf("hourly\":{\"")+20);
     		substr=substr.substring(0, substr.indexOf("\""));
-			refreshInProgress=false;
     	} else {
     		String icon1 = "@drawable/unknown";
     		Resources res = getResources();
     		int resourceId = res.getIdentifier(icon1, "drawable", getPackageName() );
     		iconimage.setImageResource(resourceId);
-    		out("nothing to display or bad json...");
-    		out("data=" + data);
-    		UpOption=false;
-	        status.setText("nothing to display...");
-	        refreshInProgress=false;
+			out("nothing to display or bad json...");
+			out("nointernet="+nointernet);
+			out("nogps="+nogps);
+			status.setText(statusline);
     	}
     }
     
@@ -287,7 +262,6 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		result = "";
 		statusline = ""; nointernet=false; nogps=false;city="";
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
 		criteria = new Criteria();
 		criteria.setAccuracy(Criteria.ACCURACY_COARSE);   //default
 		criteria.setCostAllowed(false);
@@ -297,7 +271,6 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		out("Get Location ");
 		if (location != null) {
 			mylistener.onLocationChanged(location);
-			// location updates: at least 1 meter and 200millsecs change
 			locationManager.requestLocationUpdates(provider, 2000, 100, mylistener);
 			String a = "" + location.getLatitude();
 			if (location != null) {
@@ -307,7 +280,6 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 				out("New Lat trouve:" + latitude + " / long:" + longitude);
 				oldLatitude = latitude;
 				oldLongitude = longitude;
-//			statusline="(last refresh:";
 			} else {
 				out("no Lat trouve:");
 				nogps=true;
@@ -319,7 +291,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			//	remplacement de la localisation pour test
 			//
 			//latitude=50.647392; longitude=3.130481; // my home
-			latitude=45.092624; longitude=6.068348; // alpe d'huez
+			//latitude=45.092624; longitude=6.068348; // alpe d'huez
 			//latitude=45.125263; longitude=6.127609; // Pic Blanc
 			//latitude=41.919229; longitude=8.738635; //Ajaccio
 			//latitude=46.192683; longitude=48.205964; //Russie
@@ -349,7 +321,6 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			out("No GPS found");
 			status.setText("No Gps signal");
 			nogps=true;
-			refreshInProgress = false;
 		}
 	}
 
@@ -380,12 +351,13 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 					return new String(response.getBody());
 				}else {
 					out("Response.sendWebRequest != 200");
-					refreshInProgress=false;
+//					refreshInProgress=false;
 					out("Error: " + response.getResponseMessage());
 				}
 			} catch (Exception e) {
 				out("HUD not connected - No Internet");
 				nointernet=true;
+				statusline ="No Internet access";
 			}
 			return null;
 		}
@@ -405,7 +377,9 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			}
 			else {
 				nointernet=true;
-				onDisplay(PreviousResult);
+				statusline ="No Internet access";
+//				onDisplay(PreviousResult);
+				status.setText(statusline);
 			}
 		}
 	}
@@ -425,12 +399,13 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 					return new String(response.getBody());
 				}else {
 					out("Response.sendWebRequest != 200");
-					refreshInProgress=false;
+//					refreshInProgress=false;
 					out("Error: " + response.getResponseMessage());
 				}
 			} catch (Exception e) {
 				out("HUD not connected - No Internet");
 				nointernet =true;
+				statusline ="No Internet access";
 			}
 			return null;
 		}
@@ -449,6 +424,8 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 					city = "near "+((JSONArray)jsonObject.get("results")).getJSONObject(1).getJSONArray("address_components").getJSONObject(i).getString("short_name");
 				} catch (JSONException e) {
 					e.printStackTrace();
+					out("error while requesting google api");
+					city="location unknown";
 				}
 				out("city="+city);
 				status.setText(city);
@@ -477,7 +454,9 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		if(!hasNetworkAccess) {
 			out("HUD not connected (onNetworkEvent)- No Internet");
 			nointernet=true;
-			onDisplay(PreviousResult);
+			statusline ="No Internet access";
+			status.setText(statusline);
+//			onDisplay(PreviousResult);
 		}
 	}
 
@@ -486,7 +465,6 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		File file = new File(Environment.getExternalStorageDirectory()+"/ReconApps/MyWeather2/" + "Mydebug");
 		if (file.exists() == true) {
 			try {
-//				System.out.println("write to file");
 				FileWriter fos = new FileWriter(Environment.getExternalStorageDirectory()+"/ReconApps/MyWeather2/" + "Mydebug",true);
 				fos.write(Trace+"\n");
 				fos.flush();
@@ -509,23 +487,16 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		@Override
 		public void onStatusChanged(String provider, int status, Bundle extras) {
 			out("Location OnStatusChanged, status="+status);
-//			Toast.makeText(MainActivity.this, provider + "'s status changed to "+status +"!",
-//					Toast.LENGTH_SHORT).show();
 		}
 
 		@Override
 		public void onProviderEnabled(String provider) {
 			out("Location onProviderDisabled");
-//			Toast.makeText(MainActivity.this, "Provider " + provider + " enabled!",
-//					Toast.LENGTH_SHORT).show();
-
 		}
 
 		@Override
 		public void onProviderDisabled(String provider) {
 			out("Location onProviderDisabled");
-//			Toast.makeText(MainActivity.this, "Provider " + provider + " disabled!",
-//					Toast.LENGTH_SHORT).show();
 		}
 	}
 }

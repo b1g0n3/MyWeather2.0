@@ -38,6 +38,14 @@
             android:label="@string/title_activity_settings" >
         </activity>
         <activity
+            android:name="com.myweather.Settings2Activity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name="com.myweather.AboutActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
             android:name="com.myweather.DetailActivity"
             android:label="@string/title_activity_detail" >
         </activity>

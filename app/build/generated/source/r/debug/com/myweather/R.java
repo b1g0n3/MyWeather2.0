@@ -217,27 +217,28 @@ containing a value of this type.
         public static final int view3=0x7f0b0015;
     }
     public static final class layout {
-        public static final int activity_days=0x7f030000;
-        public static final int activity_detail=0x7f030001;
-        public static final int activity_hours=0x7f030002;
-        public static final int activity_main2=0x7f030003;
-        public static final int button_action=0x7f030004;
-        public static final int carousel_host=0x7f030005;
-        public static final int carousel_host_bold_text=0x7f030006;
-        public static final int carousel_host_divider=0x7f030007;
-        public static final int carousel_host_title_body=0x7f030008;
-        public static final int carousel_item_checkmark=0x7f030009;
-        public static final int carousel_item_checkmark_selector=0x7f03000a;
-        public static final int carousel_item_icon=0x7f03000b;
-        public static final int carousel_item_title=0x7f03000c;
-        public static final int carousel_item_title_icon_column=0x7f03000d;
-        public static final int dialog_standard=0x7f03000e;
-        public static final int list_item_standard_layout=0x7f03000f;
-        public static final int list_standard_layout=0x7f030010;
-        public static final int listview_header_row=0x7f030011;
-        public static final int listview_item_row=0x7f030012;
-        public static final int settings=0x7f030013;
-        public static final int toast=0x7f030014;
+        public static final int activity_about=0x7f030000;
+        public static final int activity_days=0x7f030001;
+        public static final int activity_detail=0x7f030002;
+        public static final int activity_hours=0x7f030003;
+        public static final int activity_main2=0x7f030004;
+        public static final int button_action=0x7f030005;
+        public static final int carousel_host=0x7f030006;
+        public static final int carousel_host_bold_text=0x7f030007;
+        public static final int carousel_host_divider=0x7f030008;
+        public static final int carousel_host_title_body=0x7f030009;
+        public static final int carousel_item_checkmark=0x7f03000a;
+        public static final int carousel_item_checkmark_selector=0x7f03000b;
+        public static final int carousel_item_icon=0x7f03000c;
+        public static final int carousel_item_title=0x7f03000d;
+        public static final int carousel_item_title_icon_column=0x7f03000e;
+        public static final int dialog_standard=0x7f03000f;
+        public static final int list_item_standard_layout=0x7f030010;
+        public static final int list_standard_layout=0x7f030011;
+        public static final int listview_header_row=0x7f030012;
+        public static final int listview_item_row=0x7f030013;
+        public static final int settings=0x7f030014;
+        public static final int toast=0x7f030015;
     }
     public static final class menu {
         public static final int days=0x7f0a0000;
