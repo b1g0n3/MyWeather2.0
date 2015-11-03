@@ -14,15 +14,16 @@ import java.util.TimeZone;
 import com.github.dvdme.ForecastIOLib.FIOCurrently;
 import com.github.dvdme.ForecastIOLib.FIOHourly;
 import com.github.dvdme.ForecastIOLib.ForecastIO;
+
 import com.reconinstruments.os.HUDOS;
-
-import com.reconinstruments.webapi.ReconOSHttpClient;
-
 import com.reconinstruments.os.connectivity.HUDConnectivityManager;
 import com.reconinstruments.os.connectivity.IHUDConnectivity;
 import com.reconinstruments.os.connectivity.http.HUDHttpRequest;
 import com.reconinstruments.os.connectivity.http.HUDHttpRequest.RequestMethod;
 import com.reconinstruments.os.connectivity.http.HUDHttpResponse;
+/*
+import com.reconinstruments.webapi.ReconOSHttpClient;
+*/
 
 import android.app.Activity;
 import android.content.Context;
@@ -48,9 +49,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-//public class MainActivity extends Activity implements IHUDConnectivity {
 public class MainActivity extends Activity implements IHUDConnectivity {
-//public class MainActivity extends Activity implements IReconDataReceiver, IHUDConnectivity {
 
 	private LocationManager locationManager;
 	private String provider;
@@ -65,7 +64,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 	private TextView temperature,textressentie,temperature1,temperature2,textView5;
 	private ImageView iconimage,iconimage1,iconimage2;
 	public static String result;
-	private static ReconOSHttpClient client;
+//	private static ReconOSHttpClient client;
 	public double latitude,oldLatitude;
 	public double longitude,oldLongitude;
 	static String key = "28faca837266a521f823ab10d1a45050";
@@ -106,7 +105,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 
 	@Override
 	public boolean onKeyUp(int keyCode, KeyEvent event) {
-		out("Keydown: (" + keyCode + ")");
+		out("KeyUp: (" + keyCode + ")");
 	    switch (keyCode) {
             case KeyEvent.KEYCODE_DPAD_CENTER :
             {
@@ -151,7 +150,6 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		super.onPause();
 	}
 
-	
     @Override
 	protected void onDestroy() {
 		SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
@@ -178,7 +176,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 	    LayoutInflater inflater = getLayoutInflater();
     	View layout = inflater.inflate(R.layout.toast,(ViewGroup) findViewById(R.id.toast_layout_root));
     	ImageView image = (ImageView) layout.findViewById(R.id.image);
-    	image.setImageResource(R.drawable.scroll2);
+		image.setImageResource(R.drawable.scroll2);
 //    	onDisplay(PreviousResult);
 		doRefresh();
 		super.onResume();
@@ -198,8 +196,8 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     		String icon1 = "@drawable/"+icon.replace("-", "_");
     		Resources res = getResources();
     		int resourceId = res.getIdentifier(icon1, "drawable", getPackageName() );
-    		iconimage.setImageResource( resourceId );
-    		setTitle("MyWeather : currently");
+    		iconimage.setImageResource( resourceId);
+			setTitle("MyWeather : currently");
 //    		if (language.equals("en")) {
     		feel = getString(R.string.feellike_en);
     		press = getString(R.string.pressure_en);
@@ -234,8 +232,8 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			out("Displaying Next 2h");
 			icon = "@drawable/"+hourly.getHour(next+1).icon().replace("\"", "").replace("-", "_");
 			resourceId = res.getIdentifier(icon, "drawable", getPackageName());
-			iconimage2.setImageResource( resourceId );
-			temperature2.setText(DoubleToI(hourly.getHour(next+1).getByKey("temperature")) + "°");
+			iconimage2.setImageResource( resourceId);
+			temperature2.setText(DoubleToI(hourly.getHour(next + 1).getByKey("temperature")) + "°");
 			out("Displaying city");
 			if (city !=null & city!="") { statusline=city; }
     		status.setText(statusline);
@@ -245,9 +243,9 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     		String icon1 = "@drawable/unknown";
     		Resources res = getResources();
     		int resourceId = res.getIdentifier(icon1, "drawable", getPackageName() );
-    		iconimage.setImageResource(resourceId);
+			iconimage.setImageResource(resourceId);
 			out("nothing to display or bad json...");
-			out("nointernet="+nointernet);
+			out("nointernet=" + nointernet);
 			out("nogps="+nogps);
 			status.setText(statusline);
     	}

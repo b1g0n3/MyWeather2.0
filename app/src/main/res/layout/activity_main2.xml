@@ -149,8 +149,7 @@
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:weightSum="1">
+                    android:layout_height="70dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -180,7 +179,6 @@
                     android:textColor="@color/recon_jet_gray"
                     style="@style/recon_jet_text_primary"
                     android:textSize="20dp"
-                    android:textIsSelectable="false"
                     android:textStyle="bold" />
 
                 <com.reconinstruments.ui.view.ReconTextView
@@ -218,6 +216,5 @@
         </RelativeLayout>
 
     </GridLayout>
-
 
 </LinearLayout>
