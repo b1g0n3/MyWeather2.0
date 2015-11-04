@@ -75,7 +75,8 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 //	boolean refreshInProgress;
 	boolean Mydebug, nointernet, nogps;
 	private String un,city;
-	private String feel,press,wind,humid,tend,time;
+	private String feel,press,wind,humid,time;
+//	private String tend;
 //	DialogBuilder builder;
 //	Button button_refresh;
     
@@ -99,7 +100,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		iconimage1 = (ImageView) findViewById(R.id.icon1);
 		iconimage2 = (ImageView) findViewById(R.id.icon2);
 //	    button_refresh = (Button) findViewById(R.id.button_refresh);
-	    statusline=""; city="";
+	    statusline=""; city=""; language="en";
 //	    UpOption = false;
 	}
 
@@ -198,22 +199,12 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     		int resourceId = res.getIdentifier(icon1, "drawable", getPackageName() );
     		iconimage.setImageResource( resourceId);
 			setTitle("MyWeather : currently");
-//    		if (language.equals("en")) {
     		feel = getString(R.string.feellike_en);
     		press = getString(R.string.pressure_en);
     		wind = getString(R.string.wind_en);
     		humid = getString(R.string.humid_en);
     		vitesse = "mi";
-    		tend=getString(R.string.tend_en);
-/*    		} else {
-    			feel = getString(R.string.feellike_fr);
-    			press = getString(R.string.pressure_fr);
-    			wind = getString(R.string.wind_fr);
-    			humid = getString(R.string.humid_fr);
-    			vitesse = "km";
-    			tend=getString(R.string.tend_fr);
-    		}
-*/    	    String [] f  = currently.get().getFieldsArray();
+    	    String [] f  = currently.get().getFieldsArray();
 			String dir=headingToString2(Integer.valueOf(currently.get().getByKey("windBearing")));
     		temperature.setText(DoubleToI(currently.get().getByKey("temperature"))+"°");
     		textressentie.setText(DoubleToI(currently.get().getByKey("apparentTemperature"))+"°");
@@ -224,7 +215,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			SimpleDateFormat sdfm = new SimpleDateFormat("mm");
 			sdfm.setTimeZone(TimeZone.getDefault());
 			int next=1;
-			if (Integer.valueOf(sdfm.format(date2))>29) { next=2; }
+/*			if (Integer.valueOf(sdfm.format(date2))>29) { next=2; }
 			icon = "@drawable/"+hourly.getHour(next).icon().replace("\"", "").replace("-", "_");
 			resourceId = res.getIdentifier(icon, "drawable", getPackageName() );
 			iconimage1.setImageResource(resourceId);
@@ -234,7 +225,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			resourceId = res.getIdentifier(icon, "drawable", getPackageName());
 			iconimage2.setImageResource( resourceId);
 			temperature2.setText(DoubleToI(hourly.getHour(next + 1).getByKey("temperature")) + "°");
-			out("Displaying city");
+*/			out("Displaying city");
 			if (city !=null & city!="") { statusline=city; }
     		status.setText(statusline);
     		String substr=data.substring(data.indexOf("hourly\":{\"")+20);
@@ -268,6 +259,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		mylistener = new MyLocationListener();
 		out("Get Location ");
 		if (location != null) {
+			out("I have got a location ");
 			mylistener.onLocationChanged(location);
 			locationManager.requestLocationUpdates(provider, 2000, 100, mylistener);
 			String a = "" + location.getLatitude();
@@ -295,27 +287,23 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			//latitude=46.192683; longitude=48.205964; //Russie
 			//latitude=49.168602; longitude=25.351872; //bulgarie
 			//latitude=36.752887; longitude=3.042048; //alger
-
+			un="us"; city=""; language="en";
 			out("Fetching data...");
-		        if (unit.equals("F")) {
-					un = "us";
-				} else {
-					un = "ca";
-				}
-				city="";
 			URL url = null;
-			try {
+/*			try {
+
+
+
 				url = new URL("http://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitude + "," + longitude + "&sensor=false");
 				new WebRequestTask2().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
 				url = new URL("https://api.forecast.io/forecast/" + key + "/" + latitude + "," + longitude + "?lang=" + language + "&units=" + un);
 				new WebRequestTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
+
+
 			} catch (MalformedURLException e) {
 				e.printStackTrace();
 			}
-			if (!statusline.equals("")) {
-				Toast.makeText(MainActivity.this, statusline, Toast.LENGTH_SHORT).show();
-			}
-		} else {
+*/		} else {
 			out("No GPS found");
 			status.setText("No Gps signal");
 			nogps=true;

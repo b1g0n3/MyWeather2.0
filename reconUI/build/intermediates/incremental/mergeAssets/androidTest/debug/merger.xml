@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="debug"><source path="C:\Users\B1g0n3\git\MyWeather2.0\reconUI\build\intermediates\bundles\debug\assets"/></dataSet><dataSet config="main"><source path="C:\Users\B1g0n3\git\MyWeather2.0\reconUI\src\androidTest\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="22.2.0"><source path="C:\Users\BL5849\git\MyWeather2.0\reconUI\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\assets"/></dataSet><dataSet config="debug"><source path="C:\Users\BL5849\git\MyWeather2.0\reconUI\build\intermediates\bundles\debug\assets"/></dataSet><dataSet config="main"><source path="C:\Users\BL5849\git\MyWeather2.0\reconUI\src\androidTest\assets"/></dataSet></merger>
