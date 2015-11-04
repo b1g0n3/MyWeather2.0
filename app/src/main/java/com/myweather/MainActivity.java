@@ -4,8 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,10 +19,6 @@ import com.reconinstruments.os.connectivity.IHUDConnectivity;
 import com.reconinstruments.os.connectivity.http.HUDHttpRequest;
 import com.reconinstruments.os.connectivity.http.HUDHttpRequest.RequestMethod;
 import com.reconinstruments.os.connectivity.http.HUDHttpResponse;
-/*
-import com.reconinstruments.webapi.ReconOSHttpClient;
-*/
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -39,12 +33,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -58,28 +48,20 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 
 
 	HUDConnectivityManager mHUDConnectivityManager = null;
-//	TextView mCurrentTemp;
     public boolean first;
 	private TextView status;
 	private TextView temperature,textressentie,temperature1,temperature2,textView5;
 	private ImageView iconimage,iconimage1,iconimage2;
 	public static String result;
-//	private static ReconOSHttpClient client;
 	public double latitude,oldLatitude;
 	public double longitude,oldLongitude;
 	static String key = "28faca837266a521f823ab10d1a45050";
-//    public int testByte,pass;
     String language,unit,vitesse;
     String icon,PreviousResult,temp,statusline;
-//    boolean UpOption;
-//	boolean refreshInProgress;
 	boolean Mydebug, nointernet, nogps;
 	private String un,city;
 	private String feel,press,wind,humid,time;
-//	private String tend;
-//	DialogBuilder builder;
-//	Button button_refresh;
-    
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -87,10 +69,9 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		mHUDConnectivityManager = (HUDConnectivityManager) HUDOS.getHUDService(HUDOS.HUD_CONNECTIVITY_SERVICE);
 		TimeZone tz = TimeZone.getDefault();
 		setContentView(R.layout.activity_main2);
-		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-		StrictMode.setThreadPolicy(policy); 
+//		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+//		StrictMode.setThreadPolicy(policy);
 		status = (TextView) findViewById(R.id.status);
-//		textcondition = (TextView) findViewById(R.id.condition);
 		temperature = (TextView) findViewById(R.id.Temperature);
 		temperature1 = (TextView) findViewById(R.id.Temperature1);
 		temperature2 = (TextView) findViewById(R.id.Temperature2);
@@ -99,9 +80,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     	iconimage = (ImageView) findViewById(R.id.icon);
 		iconimage1 = (ImageView) findViewById(R.id.icon1);
 		iconimage2 = (ImageView) findViewById(R.id.icon2);
-//	    button_refresh = (Button) findViewById(R.id.button_refresh);
 	    statusline=""; city=""; language="en";
-//	    UpOption = false;
 	}
 
 	@Override
@@ -122,10 +101,8 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 	        }
 	        case KeyEvent.KEYCODE_DPAD_UP :
 	        {
-//	        	if (UpOption) {
 	        	startActivity(new Intent(MainActivity.this, HoursActivity.class));
 	        	overridePendingTransition(R.anim.slidedown_in, R.anim.slidedown_out);
-//	        	}
                 return true;
 	        }
 	        case KeyEvent.KEYCODE_BACK :
@@ -141,44 +118,18 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 	@Override
 	protected void onPause() {
 		mHUDConnectivityManager.unregister(this);
-		SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = preferences.edit();
-		editor.putString("latitude", String.valueOf(oldLatitude) );
-		editor.putString("longitude", String.valueOf(oldLongitude));
-		editor.putString("Language", String.valueOf(language) );
-		editor.putString("Unit", String.valueOf(unit));
-		editor.apply();
 		super.onPause();
 	}
 
     @Override
 	protected void onDestroy() {
-		SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = preferences.edit();
-		editor.putString("latitude", String.valueOf(latitude) );
-		editor.putString("longitude", String.valueOf(longitude));
-		editor.putString("Language", String.valueOf(language) );
-		editor.putString("Unit", String.valueOf(unit));
-		editor.apply();
+		mHUDConnectivityManager.unregister(this);
     	super.onDestroy();
 	}
     
     @Override
 	protected void onResume() {
 		mHUDConnectivityManager.register(this);
-    	SharedPreferences sharedpreferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
-    	PreviousResult = sharedpreferences.getString("PreviousResult", "");
-    	language = sharedpreferences.getString("Language", "en");
-    	unit = sharedpreferences.getString("Unit", "F");
-    	temp = sharedpreferences.getString("latitude", "0");
-    	oldLatitude = Double.valueOf(temp);
-    	temp = sharedpreferences.getString("longitude", "0");
-    	oldLongitude = Double.valueOf(temp);
-	    LayoutInflater inflater = getLayoutInflater();
-    	View layout = inflater.inflate(R.layout.toast,(ViewGroup) findViewById(R.id.toast_layout_root));
-    	ImageView image = (ImageView) layout.findViewById(R.id.image);
-		image.setImageResource(R.drawable.scroll2);
-//    	onDisplay(PreviousResult);
 		doRefresh();
 		super.onResume();
     }
@@ -205,7 +156,6 @@ public class MainActivity extends Activity implements IHUDConnectivity {
     		humid = getString(R.string.humid_en);
     		vitesse = "mi";
     	    String [] f  = currently.get().getFieldsArray();
-			String dir=headingToString2(Integer.valueOf(currently.get().getByKey("windBearing")));
     		temperature.setText(DoubleToI(currently.get().getByKey("temperature"))+"°");
     		textressentie.setText(DoubleToI(currently.get().getByKey("apparentTemperature"))+"°");
 			textView5.setText("Feels like ");
@@ -215,7 +165,8 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			SimpleDateFormat sdfm = new SimpleDateFormat("mm");
 			sdfm.setTimeZone(TimeZone.getDefault());
 			int next=1;
-/*			if (Integer.valueOf(sdfm.format(date2))>29) { next=2; }
+			String date3=sdfm.format(date2);
+			if (Integer.valueOf(date3)>29) { next=2; }
 			icon = "@drawable/"+hourly.getHour(next).icon().replace("\"", "").replace("-", "_");
 			resourceId = res.getIdentifier(icon, "drawable", getPackageName() );
 			iconimage1.setImageResource(resourceId);
@@ -225,7 +176,7 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			resourceId = res.getIdentifier(icon, "drawable", getPackageName());
 			iconimage2.setImageResource( resourceId);
 			temperature2.setText(DoubleToI(hourly.getHour(next + 1).getByKey("temperature")) + "°");
-*/			out("Displaying city");
+			out("Displaying city");
 			if (city !=null & city!="") { statusline=city; }
     		status.setText(statusline);
     		String substr=data.substring(data.indexOf("hourly\":{\"")+20);
@@ -287,23 +238,14 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			//latitude=46.192683; longitude=48.205964; //Russie
 			//latitude=49.168602; longitude=25.351872; //bulgarie
 			//latitude=36.752887; longitude=3.042048; //alger
-			un="us"; city=""; language="en";
+			un = "us";
+			city = ""; language="en";
 			out("Fetching data...");
-			URL url = null;
-/*			try {
-
-
-
-				url = new URL("http://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitude + "," + longitude + "&sensor=false");
-				new WebRequestTask2().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
-				url = new URL("https://api.forecast.io/forecast/" + key + "/" + latitude + "," + longitude + "?lang=" + language + "&units=" + un);
-				new WebRequestTask().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
-
-
-			} catch (MalformedURLException e) {
-				e.printStackTrace();
-			}
-*/		} else {
+			String url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitude + "," + longitude + "&sensor=false";
+//			new WebRequestTask4(url).execute();
+			url = "https://api.forecast.io/forecast/" + key + "/" + latitude + "," + longitude + "?lang=" + language + "&units=" + un;
+			new WebRequestTask3(url).execute();
+		} else {
 			out("No GPS found");
 			status.setText("No Gps signal");
 			nogps=true;
@@ -322,23 +264,24 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		return df.format(db);
 	}
 
-	private class WebRequestTask extends AsyncTask<URL, Void, String> {
+	private class WebRequestTask3 extends AsyncTask<Void, Void, String> {
+
+		String mUrl;
+		String mComment;
+
+		public WebRequestTask3(String url) {
+			mUrl = url;
+		}
 
 		@Override
-		protected String doInBackground(URL... params) {
-			URL url = params[0];
-			HUDHttpRequest request = new HUDHttpRequest(RequestMethod.GET, url);
-			HUDHttpResponse response;
-			out("try get " + url);
+		protected String doInBackground(Void... voids) {
 			try {
-				response = mHUDConnectivityManager.sendWebRequest(request);
-				if ((response.getResponseCode() == 200) && (response.hasBody())) {
+				out("try get " + mUrl);
+				HUDHttpRequest request = new HUDHttpRequest(HUDHttpRequest.RequestMethod.GET, mUrl);
+				HUDHttpResponse response = mHUDConnectivityManager.sendWebRequest(request);
+				if (response.hasBody()) {
 					out("Response.sendWebRequest = 200");
 					return new String(response.getBody());
-				}else {
-					out("Response.sendWebRequest != 200");
-//					refreshInProgress=false;
-					out("Error: " + response.getResponseMessage());
 				}
 			} catch (Exception e) {
 				out("HUD not connected - No Internet");
@@ -351,46 +294,41 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 		@Override
 		protected void onPostExecute(String result) {
 			if (result != null) {
-				PreviousResult=result;
-				SharedPreferences preferences = getSharedPreferences("com.myweather", Context.MODE_PRIVATE);
-				SharedPreferences.Editor editor = preferences.edit();
-				editor.putString("PreviousResult", PreviousResult);
-				editor.apply();
-				oldLatitude = latitude; oldLongitude=longitude;
+				oldLatitude = latitude;
+				oldLongitude = longitude;
 				out("Displaying data...");
 				onDisplay(result);
 				out("Data displayed...");
-			}
-			else {
-				nointernet=true;
-				statusline ="No Internet access";
-//				onDisplay(PreviousResult);
+			} else {
+				nointernet = true;
+				statusline = "No Internet access";
 				status.setText(statusline);
 			}
 		}
 	}
 
-	private class WebRequestTask2 extends AsyncTask<URL, Void, String> {
+	private class WebRequestTask4 extends AsyncTask<Void, Void, String> {
+
+		String mUrl;
+		String mComment;
+
+		public WebRequestTask4(String url) {
+			mUrl = url;
+		}
 
 		@Override
-		protected String doInBackground(URL... params) {
-			URL url = params[0];
-			HUDHttpRequest request = new HUDHttpRequest(RequestMethod.GET, url);
-			HUDHttpResponse response;
-			out("try get city " + url);
+		protected String doInBackground(Void... voids) {
 			try {
-				response = mHUDConnectivityManager.sendWebRequest(request);
-				if ((response.getResponseCode() == 200) && (response.hasBody())) {
+				out("try get " + mUrl);
+				HUDHttpRequest request = new HUDHttpRequest(HUDHttpRequest.RequestMethod.GET, mUrl);
+				HUDHttpResponse response = mHUDConnectivityManager.sendWebRequest(request);
+				if (response.hasBody()) {
 					out("Response.sendWebRequest = 200");
 					return new String(response.getBody());
-				}else {
-					out("Response.sendWebRequest != 200");
-//					refreshInProgress=false;
-					out("Error: " + response.getResponseMessage());
 				}
 			} catch (Exception e) {
 				out("HUD not connected - No Internet");
-				nointernet =true;
+				nointernet=true;
 				statusline ="No Internet access";
 			}
 			return null;
@@ -443,6 +381,8 @@ public class MainActivity extends Activity implements IHUDConnectivity {
 			statusline ="No Internet access";
 			status.setText(statusline);
 //			onDisplay(PreviousResult);
+		} else {
+			out("HUD connected (onNetworkEvent)");
 		}
 	}
 
